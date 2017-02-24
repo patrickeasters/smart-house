@@ -1,0 +1,7 @@
+- platform: mqtt
+  name: "Garage Door"
+  state_topic: "smartthings/Garage Door/door"
+  command_topic: "smartthings/Garage Door/door"
+  payload_open: "open"
+  payload_close: "closed"
+  retain: true

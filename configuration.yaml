@@ -1,0 +1,70 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: 35.740
+  longitude: -78.851
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 152
+  # metric for Metric, imperial for Imperial
+  unit_system: imperial
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: America/New_York
+
+frontend:
+http:
+  api_password: !secret hass_password
+
+device_tracker:
+  - platform: owntracks
+    devices:
+      patrick_iphone: /owntracks/patrick/spe-iphone
+
+# SmartThings MQTT Bridge
+mqtt:
+  broker: localhost
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+
+# include a bunch of stuff to make this file cleaner
+switch: !include switches.yaml
+cover: !include covers.yaml
+climate: !include climate.yaml
+fan: !include fans.yaml
+sensor: !include sensors.yaml
+
+# Advertise Hue
+emulated_hue:
+  exposed_domains:
+    - switch
+    - light
+    - group
+    - media_player
+    - input_boolean
+    - fan
+    - cover
+
+# Push notifications
+notify:
+  - name: patrick_iphone
+    platform: pushover
+    api_key: !secret pushover_api_key
+    user_key: !secret pushover_user_key
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time.
+history:
+
+# View all events in a logbook
+logbook:
+
+# Track the sun
+sun:

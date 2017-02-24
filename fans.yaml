@@ -1,0 +1,11 @@
+- platform: mqtt
+  name: "Bedroom Fan"
+  state_topic: "smartthings/Master Bedroom Fan/switch"
+  command_topic: "smartthings/Master Bedroom Fan/switch"
+  speed_state_topic: "smartthings/Master Bedroom Fan/switch"
+  speed_command_topic: "smartthings/Master Bedroom Fan/switch"
+  payload_on: "on"
+  payload_off: "off"
+  payload_low_speed: "8"
+  payload_medium_speed: "67"
+  payload_high_speed: "99"
