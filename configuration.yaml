@@ -12,6 +12,7 @@ homeassistant:
   time_zone: America/New_York
 
 frontend:
+
 http:
   api_password: !secret hass_password
 
@@ -31,7 +32,10 @@ switch: !include switches.yaml
 cover: !include covers.yaml
 climate: !include climate.yaml
 fan: !include fans.yaml
+binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
+light: !include lights.yaml
+media_player: !include media.yaml
 
 # Advertise Hue
 emulated_hue:

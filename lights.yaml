@@ -1,0 +1,19 @@
+# Hue Lights
+- platform: hue
+  host: !secret hue_hostname
+  allow_unreachable: true
+  allow_hue_groups: false
+
+# RCG Recessed LED
+- platform: mqtt
+  name: "Living Room Left"
+  retain: true
+  state_topic: "smartthings/Living Room Left/switch"
+  command_topic: "smartthings/Living Room Left/switch"
+  color_temp_state_topic: "smartthings/Living Room Left/colorTemperature"
+  color_temp_command_topic: "smartthings/Living Room Left/colorTemperature"
+  brightness_state_topic: "smartthings/Living Room Left/level"
+  brightness_command_topic: "smartthings/Living Room Left/level"
+  brightness_scale: 100
+  payload_on: "on"
+  payload_off: "off"

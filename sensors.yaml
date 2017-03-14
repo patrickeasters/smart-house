@@ -1,4 +1,33 @@
+# z-wave sensors
 
+# Climate
+- platform: mqtt
+  state_topic: 'smartthings/Crawl Space Multi-sensor/temperature'
+  name: 'Crawl Space Temperature'
+  unit_of_measurement: '°F'
+
+- platform: mqtt
+  state_topic: 'smartthings/Crawl Space Multi-sensor/humidity'
+  name: 'Crawl Space Humidity'
+  unit_of_measurement: '%'
+
+# battery levels
+- platform: mqtt
+  state_topic: 'smartthings/Crawl Space Multi-sensor/battery'
+  name: 'Crawl Space Multi-sensor battery'
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: 'smartthings/Crawl Space Door/battery'
+  name: 'Crawl Space Multi-sensor battery'
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: 'smartthings/Dog Food Sensor/battery'
+  name: 'Dog Food Bin battery'
+  unit_of_measurement: '%'
+
+#
 # weather stuff
 - platform: yr
 #  - platform: wunderground
