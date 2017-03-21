@@ -19,12 +19,32 @@
 
 - platform: mqtt
   state_topic: 'smartthings/Crawl Space Door/battery'
-  name: 'Crawl Space Multi-sensor battery'
+  name: 'Crawl Space Door battery'
   unit_of_measurement: '%'
 
 - platform: mqtt
   state_topic: 'smartthings/Dog Food Sensor/battery'
   name: 'Dog Food Bin battery'
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: 'smartthings/HVAC Leak Detector/battery'
+  name: 'HVAC Leak Detector battery'
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: 'smartthings/Water Heater Leak Detector/battery'
+  name: 'Water Heater Leak Detector battery'
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: 'smartthings/Upstairs Hall Motion/battery'
+  name: 'Upstairs Hall Motion battery'
+  unit_of_measurement: '%'
+
+- platform: mqtt
+  state_topic: 'smartthings/Entry Motion/battery'
+  name: 'Entry Motion battery'
   unit_of_measurement: '%'
 
 #

@@ -20,3 +20,17 @@
   payload_on: "active"
   payload_off: "inactive"
   device_class: motion
+
+- platform: mqtt
+  state_topic: "smartthings/Entry Motion/motion"
+  name: "Entry Motion"
+  payload_on: "active"
+  payload_off: "inactive"
+  device_class: motion
+
+- platform: mqtt
+  state_topic: "smartthings/Upstairs Hall Motion/motion"
+  name: "Upstairs Hall Motion"
+  payload_on: "active"
+  payload_off: "inactive"
+  device_class: motion

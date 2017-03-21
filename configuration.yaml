@@ -10,6 +10,8 @@ homeassistant:
   unit_system: imperial
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
+  # Other customizations and stuff
+  customize: !include customize.yaml
 
 frontend:
 
@@ -28,6 +30,7 @@ mqtt:
   password: !secret mqtt_pass
 
 # include a bunch of stuff to make this file cleaner
+group: !include groups.yaml
 switch: !include switches.yaml
 cover: !include covers.yaml
 climate: !include climate.yaml
@@ -54,6 +57,10 @@ notify:
     platform: pushover
     api_key: !secret pushover_api_key
     user_key: !secret pushover_user_key
+
+# recorder
+recorder:
+  db_url: !secret mysql_connection
 
 # Checks for available updates
 updater:
