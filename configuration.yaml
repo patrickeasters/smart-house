@@ -39,6 +39,8 @@ binary_sensor: !include binary_sensors.yaml
 sensor: !include sensors.yaml
 light: !include lights.yaml
 media_player: !include media.yaml
+input_boolean: !include input_bool.yaml
+automation: !include automation.yaml
 
 # Advertise Hue
 emulated_hue:

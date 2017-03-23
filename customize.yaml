@@ -6,6 +6,14 @@ binary_sensor.dog_food_bin:
   icon: mdi:bone
 cover.garage_door:
   icon: mdi:garage
+# Input Booleans
+automation.dog_food_reset:
+  hidden: true
+automation.dog_food_activate:
+  hidden: true
+input_boolean.lamp_auto_on:
+  hidden: true
+
 # Batteries
 sensor.crawl_space_multisensor_battery:
   icon: mdi:battery
