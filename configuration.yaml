@@ -22,6 +22,9 @@ device_tracker:
   - platform: owntracks
     devices:
       patrick_iphone: /owntracks/patrick/spe-iphone
+  - platform: owntracks
+    devices:
+      patrick_iphone: /owntracks/courtney/courtney-iphone
 
 # SmartThings MQTT Bridge
 mqtt:
@@ -55,10 +58,14 @@ emulated_hue:
 
 # Push notifications
 notify:
-  - name: patrick_iphone
+  - name: pushover
     platform: pushover
     api_key: !secret pushover_api_key
     user_key: !secret pushover_user_key
+
+# z-wave
+#zwave:
+#  usb_path: /dev/ttyACM0
 
 # recorder
 recorder:

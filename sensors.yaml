@@ -11,6 +11,11 @@
   name: 'Crawl Space Humidity'
   unit_of_measurement: '%'
 
+# nodemcu status
+- platform: mqtt
+  state_topic: 'pat/alarm/status'
+  name: 'Alarm Sensor Status'
+
 # battery levels
 - platform: mqtt
   state_topic: 'smartthings/Crawl Space Multi-sensor/battery'

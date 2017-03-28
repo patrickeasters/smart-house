@@ -33,7 +33,7 @@
     entity_id: input_boolean.dog_needs_food
     state: "on"
   action:
-    - service: notify.patrick_iphone
+    - service: notify.pushover
       data:
         message: "Don't forget to feed Paisley!"
 
