@@ -14,7 +14,7 @@
 - alias: "Dog Food Reset"
   trigger:
     - platform: state
-      entity_id: binary_sensor.dog_food_bin
+      entity_id: binary_sensor.dog_food_bin_sensor_3_0
       to: "on"
   action:
     - service: input_boolean.turn_off
@@ -41,7 +41,7 @@
 - alias: "Lamp Auto On"
   trigger:
     - platform: state
-      entity_id: binary_sensor.entry_motion
+      entity_id: binary_sensor.stairs_motion_sensor_4_0
       to: "on"
   condition:
     condition: and

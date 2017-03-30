@@ -1,0 +1,14 @@
+downstairs_fan:
+  name: Downstairs Fan
+  options:
+   - "Off"
+   - "Low"
+   - "Medium"
+   - "High"
+master_fan:
+  name: Bedroom Fan
+  options:
+   - "Off"
+   - "Low"
+   - "Medium"
+   - "High"

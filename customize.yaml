@@ -2,7 +2,7 @@ sensor.crawl_space_humidity:
   icon: mdi:cup-water
 sensor.crawl_space_temperature:
   icon: mdi:thermometer
-binary_sensor.dog_food_bin:
+binary_sensor.dog_food_bin_sensor_3_0:
   icon: mdi:bone
 cover.garage_door:
   icon: mdi:garage
@@ -19,13 +19,13 @@ sensor.crawl_space_multisensor_battery:
   icon: mdi:battery
 sensor.crawl_space_door_battery:
   icon: mdi:battery
-sensor.dog_food_bin_battery:
+sensor.dog_food_bin_battery_level_3_0:
   icon: mdi:battery
-sensor.entry_motion_battery:
+sensor.stairs_motion_battery_level_4_0:
   icon: mdi:battery
 sensor.hvac_leak_detector_battery:
   icon: mdi:battery
-sensor.upstairs_hall_motion_battery:
+sensor.upstairs_hall_motion_battery_level_5_0:
   icon: mdi:battery
 sensor.water_heater_leak_detector_battery:
   icon: mdi:battery

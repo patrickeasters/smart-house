@@ -43,6 +43,7 @@ sensor: !include sensors.yaml
 light: !include lights.yaml
 media_player: !include media.yaml
 input_boolean: !include input_bool.yaml
+input_select: !include input_select.yaml
 automation: !include automation.yaml
 
 # Advertise Hue
@@ -64,8 +65,8 @@ notify:
     user_key: !secret pushover_user_key
 
 # z-wave
-#zwave:
-#  usb_path: /dev/ttyACM0
+zwave:
+  usb_path: /dev/ttyUSB0
 
 # recorder
 recorder:
