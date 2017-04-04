@@ -15,7 +15,6 @@ master_bedroom:
   entities:
     - light.nightstand__courtney
     - light.nightstand__patrick
-    - fan.bedroom_fan
 nursery:
   name: Nursery
   view: yes
@@ -31,14 +30,3 @@ util:
     - group.battery
 
 # Groups
-battery:
-  name: Battery levels
-  control: hidden
-  entities:
-    - sensor.crawl_space_door_battery
-    - sensor.crawl_space_multisensor_battery
-    - sensor.dog_food_bin_battery
-    - sensor.entry_motion_battery
-    - sensor.hvac_leak_detector_battery
-    - sensor.upstairs_hall_motion_battery
-    - sensor.water_heater_leak_detector_battery

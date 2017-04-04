@@ -67,10 +67,21 @@ notify:
 # z-wave
 zwave:
   usb_path: /dev/ttyUSB0
+  device_config: !include zwave_devices.yaml
+
+# zigbee home automation
+#zha:
+#  usb_path: /dev/ttyUSB1
+#  database_path: /home/hass/.homeassistant/zigbee.db
 
 # recorder
 recorder:
   db_url: !secret mysql_connection
+  purge_days: 7
+
+# logger
+logger:
+  default: warning
 
 # Checks for available updates
 updater:

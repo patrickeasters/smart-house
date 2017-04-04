@@ -1,8 +1,1 @@
-# Patio Lights
-- platform: mqtt
-  name: "Patio Lights"
-  state_topic: "smartthings/Outside Lights/switch"
-  command_topic: "smartthings/Outside Lights/switch"
-  payload_on: "on"
-  payload_off: "off"
-  retain: true
+

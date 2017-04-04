@@ -6,6 +6,14 @@ binary_sensor.dog_food_bin_sensor_3_0:
   icon: mdi:bone
 cover.garage_door:
   icon: mdi:garage
+binary_sensor.stairs_motion_sensor_4_0:
+  device_class: motion
+binary_sensor.upstairs_hall_motion_sensor_5_0:
+  device_class: motion
+binary_sensor.master_bath_multi_sensor_7_0:
+  device_class: motion
+binary_sensor.nursery_door_sensor_6_0:
+  device_class: opening
 # Input Booleans
 automation.dog_food_reset:
   hidden: true
@@ -13,19 +21,13 @@ automation.dog_food_activate:
   hidden: true
 input_boolean.lamp_auto_on:
   hidden: true
-
-# Batteries
-sensor.crawl_space_multisensor_battery:
-  icon: mdi:battery
-sensor.crawl_space_door_battery:
-  icon: mdi:battery
-sensor.dog_food_bin_battery_level_3_0:
-  icon: mdi:battery
-sensor.stairs_motion_battery_level_4_0:
-  icon: mdi:battery
-sensor.hvac_leak_detector_battery:
-  icon: mdi:battery
-sensor.upstairs_hall_motion_battery_level_5_0:
-  icon: mdi:battery
-sensor.water_heater_leak_detector_battery:
-  icon: mdi:battery
+# Lights
+light.osram_lightify_rt_rgbw_0008419b_3:
+  friendly_name: "Living Room Right"
+light.osram_lightify_rt_rgbw_00083dd9_3:
+  friendly_name: "Living Room Left"
+# Switches
+switch.front_outside_lights_switch_9_0:
+  friendly_name: "Outside Garage Lights"
+switch.front_outside_lights_switch_9_0_2:
+  friendly_name: "Side Flood Lights"

@@ -1,41 +1,7 @@
-# z-wave sensors
-
-# Climate
-- platform: mqtt
-  state_topic: 'smartthings/Crawl Space Multi-sensor/temperature'
-  name: 'Crawl Space Temperature'
-  unit_of_measurement: '°F'
-
-- platform: mqtt
-  state_topic: 'smartthings/Crawl Space Multi-sensor/humidity'
-  name: 'Crawl Space Humidity'
-  unit_of_measurement: '%'
-
 # nodemcu status
 - platform: mqtt
   state_topic: 'pat/alarm/status'
   name: 'Alarm Sensor Status'
-
-# battery levels
-- platform: mqtt
-  state_topic: 'smartthings/Crawl Space Multi-sensor/battery'
-  name: 'Crawl Space Multi-sensor battery'
-  unit_of_measurement: '%'
-
-- platform: mqtt
-  state_topic: 'smartthings/Crawl Space Door/battery'
-  name: 'Crawl Space Door battery'
-  unit_of_measurement: '%'
-
-- platform: mqtt
-  state_topic: 'smartthings/HVAC Leak Detector/battery'
-  name: 'HVAC Leak Detector battery'
-  unit_of_measurement: '%'
-
-- platform: mqtt
-  state_topic: 'smartthings/Water Heater Leak Detector/battery'
-  name: 'Water Heater Leak Detector battery'
-  unit_of_measurement: '%'
 
 #
 # weather stuff

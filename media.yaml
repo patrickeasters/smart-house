@@ -2,10 +2,10 @@
 - platform: cast
 
 # TV
-- platform: webostv
-  name: "Living Room TV"
-  host: !secret living_room_tv_host
-  mac: !secret living_room_tv_mac
+#- platform: webostv
+#  name: "Living Room TV"
+#  host: !secret living_room_tv_host
+#  mac: !secret living_room_tv_mac
 
 # Apple TV
 - platform: apple_tv

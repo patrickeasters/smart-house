@@ -1,8 +1,0 @@
-- platform: mqtt
-  name: "Garage Door"
-  icon: mdi:garage
-  state_topic: "smartthings/Garage Door/door"
-  command_topic: "smartthings/Garage Door/door"
-  payload_open: "open"
-  payload_close: "closed"
-  retain: true

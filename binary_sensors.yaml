@@ -19,19 +19,3 @@
   payload_on: "open"
   payload_off: "closed"
   device_class: opening
-
-# Door sensors
-- platform: mqtt
-  state_topic: "smartthings/Crawl Space Door/contact"
-  name: "Crawl Space Door"
-  payload_on: "open"
-  payload_off: "closed"
-  device_class: opening
-
-# Motion
-- platform: mqtt
-  state_topic: "smartthings/Crawl Space Multi-sensor/motion"
-  name: "Crawl Space Motion"
-  payload_on: "active"
-  payload_off: "inactive"
-  device_class: motion
