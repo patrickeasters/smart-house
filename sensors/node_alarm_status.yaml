@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: 'pat/alarm/status'
+name: 'Alarm Sensor Status'

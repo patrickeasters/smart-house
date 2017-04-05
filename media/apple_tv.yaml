@@ -1,0 +1,4 @@
+platform: apple_tv
+name: "Apple TV"
+host: !secret atv_host
+login_id: !secret atv_login

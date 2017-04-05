@@ -33,18 +33,16 @@ mqtt:
   password: !secret mqtt_pass
 
 # include a bunch of stuff to make this file cleaner
-group: !include groups.yaml
-switch: !include switches.yaml
-cover: !include covers.yaml
-climate: !include climate.yaml
-fan: !include fans.yaml
-binary_sensor: !include binary_sensors.yaml
-sensor: !include sensors.yaml
-light: !include lights.yaml
-media_player: !include media.yaml
-input_boolean: !include input_bool.yaml
-input_select: !include input_select.yaml
-automation: !include automation.yaml
+group: !include_dir_merge_named groups
+switch: !include_dir_list switches
+climate: !include_dir_list climate
+binary_sensor: !include_dir_list binary_sensors
+sensor: !include_dir_list sensors
+light: !include_dir_list lights
+media_player: !include_dir_list media
+input_boolean: !include_dir_named input_bool
+input_select: !include_dir_named input_select
+automation: !include_dir_list automation
 
 # Advertise Hue
 emulated_hue:

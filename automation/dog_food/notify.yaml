@@ -1,0 +1,14 @@
+alias: "Dog Food Alert"
+trigger:
+  - platform: time
+    after: '07:30:00'
+  - platform: time
+    after: '18:00:00'
+condition:
+  condition: state
+  entity_id: input_boolean.dog_needs_food
+  state: "on"
+action:
+  - service: notify.pushover
+    data:
+      message: "Don't forget to feed Paisley!"

@@ -1,8 +1,0 @@
-dog_needs_food:
-  name: Paisley needs to be fed
-  initial: off
-  icon: mdi:silverware
-
-lamp_auto_on:
-  name: Downstairs Lamp Auto On
-  initial: off

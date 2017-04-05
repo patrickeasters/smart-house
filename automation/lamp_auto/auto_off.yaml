@@ -1,0 +1,13 @@
+alias: "Lamp Auto Off"
+trigger:
+  - platform: sun
+    event: sunrise
+    offset: '00:30:00'
+condition:
+  condition: state
+  entity_id: input_boolean.lamp_auto_on
+  state: "on"
+action:
+  - service: light.turn_off
+    data:
+      entity_id: light.downstairs_lamp

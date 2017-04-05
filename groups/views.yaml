@@ -1,5 +1,4 @@
-# Views
-downstairs:
+view_downstairs:
   name: Downstairs
   view: yes
   icon: mdi:sofa
@@ -8,25 +7,23 @@ downstairs:
     - climate.downstairs
     - switch.patio_lights
     - light.downstairs_lamp
-master_bedroom:
+view_master_bedroom:
   name: Master Bedroom
   icon: mdi:hotel
   view: yes
   entities:
     - light.nightstand__courtney
     - light.nightstand__patrick
-nursery:
+view_nursery:
   name: Nursery
   view: yes
   icon: mdi:baby-buggy
   entities:
     - light.nursery_lamp
     - light.crib_lights
-util:
+view_util:
   name: Util
   icon: mdi:settings
   view: yes
   entities:
     - group.battery
-
-# Groups

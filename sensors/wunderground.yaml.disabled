@@ -1,12 +1,4 @@
-# nodemcu status
-- platform: mqtt
-  state_topic: 'pat/alarm/status'
-  name: 'Alarm Sensor Status'
-
-#
-# weather stuff
-- platform: yr
-#  - platform: wunderground
+#  platform: wunderground
 #    api_key: !secret wunderground_api_key
 #    pws_id: KNCAPEX32
 #    monitored_conditions:

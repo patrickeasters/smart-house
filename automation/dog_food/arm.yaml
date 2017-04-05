@@ -1,0 +1,11 @@
+# Reset alarm before each feeding time
+alias: "Dog Food Activate"
+trigger:
+  - platform: time
+    after: '01:00:00'
+  - platform: time
+    after: '16:00:00'
+action:
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.dog_needs_food
