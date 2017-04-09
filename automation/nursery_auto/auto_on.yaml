@@ -1,0 +1,21 @@
+alias: "Nursery Auto On"
+trigger:
+  - platform: numeric_state
+    entity_id: sensor.nursery_multi_burglar_7_10
+    above: 7
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: "below_horizon"
+    - condition: state
+      entity_id: light.nursery_lamp
+      state: "off"
+action:
+  - service: input_boolean.turn_on
+    data:
+      entity_id: input_boolean.nursery_auto_on
+  - service: scene.turn_on
+    data:
+      entity_id: scene.nursery_changing_lights

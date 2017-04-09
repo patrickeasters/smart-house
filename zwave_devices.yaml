@@ -2,8 +2,6 @@ sensor.crawl_space_multi_alarm_level_12_1:
   ignored: true
 sensor.crawl_space_multi_alarm_type_12_0:
   ignored: true
-sensor.crawl_space_multi_burglar_12_10:
-  ignored: true
 sensor.crawl_space_multi_power_management_12_11:
   ignored: true
 sensor.crawl_space_multi_sourcenodeid_12_2:
@@ -24,25 +22,23 @@ sensor.hvac_leak_flood_15_8:
   ignored: true
 sensor.hvac_leak_sourcenodeid_15_2:
   ignored: true
-sensor.master_bath_multi_alarm_level_7_1:
+sensor.nursery_multi_alarm_level_7_1:
   ignored: true
-sensor.master_bath_multi_alarm_type_7_0:
+sensor.nursery_multi_alarm_type_7_0:
   ignored: true
-sensor.master_bath_multi_burglar_7_10:
+sensor.nursery_multi_clock_7_14:
   ignored: true
-sensor.master_bath_multi_clock_7_14:
+sensor.nursery_multi_sourcenodeid_7_2:
   ignored: true
-sensor.master_bath_multi_sourcenodeid_7_2:
+sensor.nursery_multi_system_7_12:
   ignored: true
-sensor.master_bath_multi_system_7_12:
+sensor.master_bath_door_access_control_6_9:
   ignored: true
-sensor.nursery_door_access_control_6_9:
+sensor.master_bath_door_alarm_level_6_1:
   ignored: true
-sensor.nursery_door_alarm_level_6_1:
+sensor.master_bath_door_alarm_type_6_0:
   ignored: true
-sensor.nursery_door_alarm_type_6_0:
-  ignored: true
-sensor.nursery_door_sourcenodeid_6_2:
+sensor.master_bath_door_sourcenodeid_6_2:
   ignored: true
 sensor.stairs_motion_alarm_level_4_1:
   ignored: true
@@ -52,13 +48,13 @@ sensor.stairs_motion_burglar_4_10:
   ignored: true
 sensor.stairs_motion_sourcenodeid_4_2:
   ignored: true
-sensor.upstairs_hall_motion_alarm_level_5_1:
+sensor.front_porch_motion_alarm_level_5_1:
   ignored: true
-sensor.upstairs_hall_motion_alarm_type_5_0:
+sensor.front_porch_motion_alarm_type_5_0:
   ignored: true
-sensor.upstairs_hall_motion_burglar_5_10:
+sensor.front_porch_motion_burglar_5_10:
   ignored: true
-sensor.upstairs_hall_motion_sourcenodeid_5_2:
+sensor.front_porch_motion_sourcenodeid_5_2:
   ignored: true
 sensor.water_heater_leak_alarm_level_14_1:
   ignored: true
@@ -68,5 +64,5 @@ sensor.water_heater_leak_flood_14_8:
   ignored: true
 sensor.water_heater_leak_sourcenodeid_14_2:
   ignored: true
-switch.front_outside_lights_switch_9_0_3:
+switch.front_outside_lights_switch_9_0:
   ignored: true

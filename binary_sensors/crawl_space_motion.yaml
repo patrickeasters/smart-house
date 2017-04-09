@@ -1,0 +1,5 @@
+name: Crawl Space Motion
+platform: threshold
+threshold: 7
+type: upper
+entity_id: sensor.crawl_space_multi_burglar_12_10

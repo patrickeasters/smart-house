@@ -1,0 +1,10 @@
+name: Nursery Changing Lights
+entities:
+  light.nursery_lamp:
+    state: on
+    rgb_color: [19, 9, 1]
+    brightness: 1
+  light.crib_lights:
+    state: on
+    rgb_color: [146, 100, 33]
+    brightness: 43

@@ -1,0 +1,5 @@
+name: "Work Commute from Home"
+platform: google_travel_time
+api_key: !secret google_api_key
+origin: !secret place_home
+destination: !secret place_redhat

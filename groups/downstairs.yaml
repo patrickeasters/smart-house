@@ -1,0 +1,12 @@
+living_room:
+  name: Living Room
+  icon: mdi:sofa
+  entities:
+    - light.downstairs_lamp
+    - input_select.downstairs_fan
+
+downstairs_tv:
+  name: Entertainment
+  entities:
+    - media_player.apple_tv
+    - media_player.living_room_chromecast

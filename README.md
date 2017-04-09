@@ -1,6 +1,7 @@
 # smart-house
-Just another Home Assistant configuration.
-Named after the Disney Channel original movie that my wife thinks will become a reality.
+Just another Home Assistant configuration. The project is named after the Disney Channel original movie that my wife thinks will become a reality.
+
+This config is ever-changing, so some things may not work, etc.
 
 ![Smart House](http://i.imgur.com/7g8Kh2v.jpg)
 

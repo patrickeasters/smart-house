@@ -2,8 +2,8 @@ homeassistant:
   # Name of the location where Home Assistant is running
   name: Home
   # Location required to calculate the time the sun rises and sets
-  latitude: 35.740
-  longitude: -78.851
+  latitude: !secret home_lat
+  longitude: !secret home_long
   # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 152
   # metric for Metric, imperial for Imperial
@@ -17,16 +17,17 @@ frontend:
 
 http:
   api_password: !secret hass_password
+  use_x_forwarded_for: true
+  ip_ban_enabled: true
+  login_attempts_threshold: 5
 
 device_tracker:
   - platform: owntracks
     devices:
       patrick_iphone: /owntracks/patrick/spe-iphone
-  - platform: owntracks
-    devices:
-      patrick_iphone: /owntracks/courtney/courtney-iphone
+      courtney_iphone: /owntracks/courtney/courtney-iphone
 
-# SmartThings MQTT Bridge
+# MQTT Broker
 mqtt:
   broker: localhost
   username: !secret mqtt_user
@@ -43,6 +44,7 @@ media_player: !include_dir_list media
 input_boolean: !include_dir_named input_bool
 input_select: !include_dir_named input_select
 automation: !include_dir_list automation
+scene: !include_dir_list scenes
 
 # Advertise Hue
 emulated_hue:
@@ -71,6 +73,14 @@ zwave:
 #zha:
 #  usb_path: /dev/ttyUSB1
 #  database_path: /home/hass/.homeassistant/zigbee.db
+
+# zones
+zone:
+  name: Red Hat
+  icon: mdi:briefcase
+  latitude: 35.775267
+  longitude: -78.637566
+  radius: 150
 
 # recorder
 recorder:

@@ -1,0 +1,16 @@
+alias: "Porch Light Auto On"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.front_door
+    to: "on"
+condition:
+  condition: state
+  entity_id: sun.sun
+  state: "below_horizon"
+action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.front_porch_light_switch_11_0
+  - service: homeassistant.turn_on
+    data:
+      entity_id: input_boolean.porch_auto_on

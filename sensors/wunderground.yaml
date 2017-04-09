@@ -1,12 +1,12 @@
-#  platform: wunderground
-#    api_key: !secret wunderground_api_key
-#    pws_id: KNCAPEX32
-#    monitored_conditions:
+platform: wunderground
+api_key: !secret wunderground_api_key
+pws_id: KNCAPEX32
+monitored_conditions:
 #      - alerts
 #      - dewpoint_f
 #      - dewpoint_string
 #      - feelslike_f
-#      - feelslike_string
+  - feelslike_string
 #      - heat_index_f
 #      - heat_index_string
 #      - elevation
@@ -15,22 +15,22 @@
 #      - precip_1hr_in
 #      - precip_1hr_metric
 #      - precip_1hr_string
-#      - precip_today_in
+  - precip_today_in
 #      - precip_today_metric
-#      - precip_today_string
+  - precip_today_string
 #      - pressure_in
 #      - pressure_mb
 #      - pressure_trend
-#      - relative_humidity
+  - relative_humidity
 #      - station_id
 #      - solarradiation
-#      - temperature_string
-#      - temp_f
-#      - UV
+  - temperature_string
+  - temp_f
+  - UV
 #      - visibility_mi
-#      - weather
+  - weather
 #      - wind_degrees
-#      - wind_dir
+  - wind_dir
 #      - wind_gust_mph
-#      - wind_mph
-#      - wind_string
+  - wind_mph
+  - wind_string

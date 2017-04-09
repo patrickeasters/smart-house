@@ -1,0 +1,5 @@
+name: Nursery Motion
+platform: threshold
+threshold: 7
+type: upper
+entity_id: sensor.nursery_multi_burglar_7_10

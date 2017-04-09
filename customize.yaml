@@ -1,33 +1,51 @@
-sensor.crawl_space_humidity:
-  icon: mdi:cup-water
-sensor.crawl_space_temperature:
-  icon: mdi:thermometer
+# Binary Sensors
 binary_sensor.dog_food_bin_sensor_3_0:
   icon: mdi:bone
-cover.garage_door:
-  icon: mdi:garage
 binary_sensor.stairs_motion_sensor_4_0:
   device_class: motion
-binary_sensor.upstairs_hall_motion_sensor_5_0:
+binary_sensor.front_porch_motion_sensor_5_0:
   device_class: motion
-binary_sensor.master_bath_multi_sensor_7_0:
+binary_sensor.crawl_space_motion:
   device_class: motion
-binary_sensor.nursery_door_sensor_6_0:
+binary_sensor.nursery_motion:
+  device_class: motion
+binary_sensor.master_bath_door_sensor_6_0:
   device_class: opening
-# Input Booleans
-automation.dog_food_reset:
+binary_sensor.crawl_space_multi_sensor_12_0:
   hidden: true
-automation.dog_food_activate:
+binary_sensor.nursery_multi_sensor_7_0:
   hidden: true
+# Sensors
+sensor.crawl_space_multi_relative_humidity_12_5:
+  icon: mdi:cup-water
+sensor.crawl_space_multi_luminance_12_3:
+  icon: mdi:flashlight
+sensor.nursery_multi_relative_humidity_7_5:
+  icon: mdi:cup-water
+sensor.nursery_multi_luminance_7_3:
+  icon: mdi:flashlight
+sensor.nursery_multi_burglar_7_10:
+  hidden: true
+sensor.crawl_space_multi_sensor_12_10:
+  hidden: true
+sensor.work_commute_from_home:
+  friendly_name: "To Work"
+# Automation Booleans
 input_boolean.lamp_auto_on:
+  hidden: true
+input_boolean.nursery_auto_on:
   hidden: true
 # Lights
 light.osram_lightify_rt_rgbw_0008419b_3:
   friendly_name: "Living Room Right"
 light.osram_lightify_rt_rgbw_00083dd9_3:
   friendly_name: "Living Room Left"
+light.downstairs_fan_level_2_0:
+  hidden: true
+light.master_bedroom_fan_level_8_0:
+  hidden: true
 # Switches
-switch.front_outside_lights_switch_9_0:
+switch.front_outside_lights_switch_9_0_3:
   friendly_name: "Outside Garage Lights"
 switch.front_outside_lights_switch_9_0_2:
   friendly_name: "Side Flood Lights"

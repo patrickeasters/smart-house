@@ -1,0 +1,15 @@
+glance:
+  name: At a Glance
+  control: hidden
+  entities:
+    - group.exterior_doors
+    - group.exterior_lights
+    - group.living_room
+    - group.nursery
+    - group.master_bedroom
+
+scenes:
+  name: Quick Scenes
+  control: hidden
+  entities:
+    - scene.nursery_changing_lights

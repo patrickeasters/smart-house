@@ -1,0 +1,14 @@
+nursery:
+  name: Nursery
+  icon: mdi:baby-buggy
+  entities:
+    - light.nursery_lamp
+    - light.crib_lights
+
+master_bedroom:
+  name: Master Bedroom
+  icon: mdi:hotel
+  entities:
+    - input_select.master_fan
+    - light.nightstand__courtney
+    - light.nightstand__patrick

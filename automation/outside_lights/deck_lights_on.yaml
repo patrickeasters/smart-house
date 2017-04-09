@@ -1,0 +1,20 @@
+alias: "Deck Lights Auto On"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.back_door
+    to: "on"
+condition:
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: "below_horizon"
+    - condition: time
+      after: '12:00:00'
+action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.deck_lights_switch_10_0
+  - service: homeassistant.turn_on
+    data:
+      entity_id: input_boolean.deck_auto_on
