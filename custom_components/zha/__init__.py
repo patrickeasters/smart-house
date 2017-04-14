@@ -131,8 +131,7 @@ class ApplicationListener:
     def async_device_initialized(self, device, join):
         """Handle device joined and basic information discovered (async)."""
         import bellows.zigbee.profiles
-        import homeassistant.components.zha.const as zha_const
-
+        from . import const as zha_const
         for endpoint_id, endpoint in device.endpoints.items():
             if endpoint_id == 0:  # ZDO
                 continue

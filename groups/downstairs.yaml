@@ -3,6 +3,8 @@ living_room:
   icon: mdi:sofa
   entities:
     - light.downstairs_lamp
+    - light.osram_lightify_rt_rgbw_0008419b_3
+    - light.osram_lightify_rt_rgbw_00083dd9_3
     - input_select.downstairs_fan
 
 downstairs_tv:
@@ -10,3 +12,4 @@ downstairs_tv:
   entities:
     - media_player.apple_tv
     - media_player.living_room_chromecast
+    - media_player.spotify

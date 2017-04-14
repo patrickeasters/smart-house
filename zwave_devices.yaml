@@ -1,3 +1,15 @@
+# GE dimmers need to be refreshed on a delay
+light.downstairs_fan_level_2_0:
+  refresh_value: true
+  delay: 3
+light.master_bedroom_fan_level_8_0:
+  refresh_value: true
+  delay: 3
+light.wall_plug_level_16_0:
+  refresh_value: true
+  delay: 3
+
+# Ignore all this extra crap
 sensor.crawl_space_multi_alarm_level_12_1:
   ignored: true
 sensor.crawl_space_multi_alarm_type_12_0:
