@@ -49,3 +49,8 @@ switch.front_outside_lights_switch_9_0_3:
   friendly_name: "Outside Garage Lights"
 switch.front_outside_lights_switch_9_0_2:
   friendly_name: "Side Flood Lights"
+# Zones
+zone.home:
+  track_ios: true
+zone.red_hat:
+  track_ios: true
