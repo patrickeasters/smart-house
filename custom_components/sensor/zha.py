@@ -15,7 +15,7 @@ from homeassistant.util.temperature import convert as convert_temperature
 _LOGGER = logging.getLogger(__name__)
 
 DEPENDENCIES = ['zha']
-
+DATA_ZHA_DICT = 'zha_devices'
 
 @asyncio.coroutine
 def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
@@ -23,7 +23,10 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     if discovery_info is None:
         return
 
-    sensor = yield from make_sensor(discovery_info)
+    """Restore original discovery items that were moved to make discovery info JSON serializable."""
+    discovered_endpoint_info = hass.data[DATA_ZHA_DICT][discovery_info['endpoint']]
+
+    sensor = yield from make_sensor(discovered_endpoint_info)
     async_add_devices([sensor])
 
 
@@ -31,6 +34,7 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
 def make_sensor(discovery_info):
     """Factory function for ZHA sensors."""
     from bellows.zigbee import zcl
+
     if isinstance(discovery_info['clusters'][0],
                   zcl.clusters.measurement.TemperatureMeasurement):
         sensor = TemperatureSensor(**discovery_info)

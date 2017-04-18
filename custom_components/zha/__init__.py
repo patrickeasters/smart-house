@@ -6,6 +6,7 @@ https://home-assistant.io/components/zha/
 """
 import asyncio
 import logging
+import uuid
 
 import voluptuous as vol
 
@@ -24,6 +25,8 @@ CONF_USB_PATH = 'usb_path'
 CONF_DATABASE = 'database_path'
 CONF_DEVICE_CONFIG = 'device_config'
 DATA_DEVICE_CONFIG = 'zha_device_config'
+
+DATA_ZHA_DICT = 'zha_devices'
 
 DEVICE_CONFIG_SCHEMA_ENTRY = vol.Schema({
     vol.Optional(ha_const.CONF_TYPE): cv.string,
@@ -83,6 +86,7 @@ def async_setup(hass, config):
     usb_path = config[DOMAIN].get(CONF_USB_PATH)
     yield from ezsp_.connect(usb_path)
 
+    hass.data[DATA_ZHA_DICT] = {}
     database = config[DOMAIN].get(CONF_DATABASE)
     APPLICATION_CONTROLLER = ControllerApplication(ezsp_, database)
     listener = ApplicationListener(hass, config)
@@ -131,7 +135,8 @@ class ApplicationListener:
     def async_device_initialized(self, device, join):
         """Handle device joined and basic information discovered (async)."""
         import bellows.zigbee.profiles
-        from . import const as zha_const
+        import homeassistant.components.zha.const as zha_const
+
         for endpoint_id, endpoint in device.endpoints.items():
             if endpoint_id == 0:  # ZDO
                 continue
@@ -161,12 +166,22 @@ class ApplicationListener:
             if has_valid_profile and component:
                 clusters = [endpoint.clusters[c] for c in used_clusters if c in
                             endpoint.clusters]
-                discovery_info = {
+
+                endpoint_info = {
                     'endpoint': endpoint,
                     'clusters': clusters,
                     'new_join': join,
                 }
-                discovery_info.update(discovered_info)
+
+                """endpoint and clusters in hass.data by endpoint_id to make discovery info JSON serializable."""
+                uniqueKey = str(uuid.uuid4())
+                self._hass.data[DATA_ZHA_DICT][uniqueKey] = endpoint_info
+
+                discovery_info = {
+                    'endpoint': uniqueKey,
+                    'new_join': join,
+                }
+                self._hass.data[DATA_ZHA_DICT][uniqueKey].update(discovered_info)
 
                 yield from discovery.async_load_platform(
                     self._hass,
@@ -184,12 +199,22 @@ class ApplicationListener:
                     continue
 
                 component = zha_const.SINGLE_CLUSTER_DEVICE_CLASS[cluster_type]
-                discovery_info = {
+
+                endpoint_info = {
                     'endpoint': endpoint,
                     'clusters': [cluster],
                     'new_join': join,
                 }
-                discovery_info.update(discovered_info)
+
+                """endpoint and clusters in hass.data by endpoint_id to make discovery info JSON serializable."""
+                uniqueKey = str(uuid.uuid4())
+                self._hass.data[DATA_ZHA_DICT][uniqueKey] = endpoint_info
+
+                discovery_info = {
+                    'endpoint': uniqueKey,
+                    'new_join': join,
+                }
+                self._hass.data[DATA_ZHA_DICT][uniqueKey].update(discovered_info)
 
                 yield from discovery.async_load_platform(
                     self._hass,

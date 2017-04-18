@@ -23,6 +23,7 @@ CLASS_MAPPING = {
     0x002d: 'vibration',
 }
 
+DATA_ZHA_DICT = 'zha_devices'
 
 @asyncio.coroutine
 def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
@@ -30,7 +31,10 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     if discovery_info is None:
         return
 
-    clusters = discovery_info['clusters']
+    """Restore original discovery items that were moved to make discovery info JSON serializable."""
+    discovered_endpoint_info = hass.data[DATA_ZHA_DICT][discovery_info['endpoint']]
+
+    clusters = discovered_endpoint_info['clusters']
 
     device_class = None
     cluster = [c for c in clusters if c.cluster_id == 0x0500][0]
@@ -43,7 +47,7 @@ def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     if 1 in success:
         device_class = CLASS_MAPPING.get(success[1], None)
 
-    sensor = BinarySensor(device_class, **discovery_info)
+    sensor = BinarySensor(device_class, **discovered_endpoint_info)
     async_add_devices([sensor])
 
 
@@ -61,7 +65,7 @@ class BinarySensor(zha.Entity, BinarySensorDevice):
     def is_on(self) -> bool:
         """Return True if entity is on."""
         if self._state == 'unknown':
-            return self._state
+            return False
         return bool(self._state)
 
     @property
