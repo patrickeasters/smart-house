@@ -15,6 +15,8 @@ binary_sensor.crawl_space_multi_sensor_12_0:
   hidden: true
 binary_sensor.nursery_multi_sensor_7_0:
   hidden: true
+binary_sensor.centralite_3320l_0bbe6586_1:
+  friendly_name: "Crawl Space Door"
 # Sensors
 sensor.crawl_space_multi_relative_humidity_12_5:
   icon: mdi:cup-water
@@ -35,19 +37,28 @@ input_boolean.lamp_auto_on:
   hidden: true
 input_boolean.nursery_auto_on:
   hidden: true
+# Groups
+group.view_downstairs:
+  order: 1
+group.view_upstairs:
+  order: 2
+group.view_exterior:
+  order: 3
 # Lights
 light.osram_lightify_rt_rgbw_0008419b_3:
   friendly_name: "Living Room Right"
 light.osram_lightify_rt_rgbw_00083dd9_3:
   friendly_name: "Living Room Left"
+light.osram_lightify_rt_rgbw_00084cf7_3:
+  friendly_name: "Master Bath Shower"
 light.downstairs_fan_level_2_0:
   hidden: true
 light.master_bedroom_fan_level_8_0:
   hidden: true
 # Switches
-switch.front_outside_lights_switch_9_0_3:
-  friendly_name: "Outside Garage Lights"
 switch.front_outside_lights_switch_9_0_2:
+  friendly_name: "Outside Garage Lights"
+switch.front_outside_lights_switch_9_0_3:
   friendly_name: "Side Flood Lights"
 # Zones
 zone.home:

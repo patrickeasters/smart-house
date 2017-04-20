@@ -52,9 +52,10 @@ emulated_hue:
     - light
     - group
     - media_player
-    - input_boolean
-    - fan
-    - cover
+
+# Alexa
+alexa:
+  intents: !include_dir_named alexa_intents
 
 # Push notifications
 notify:
@@ -106,6 +107,7 @@ recorder:
       - sensor.pws_wind_string
     domains:
       - group
+      - zwave
 
 # ios app
 ios:

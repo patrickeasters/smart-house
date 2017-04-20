@@ -4,7 +4,7 @@ trigger:
     entity_id: binary_sensor.back_door
     to: "off"
     for:
-      seconds: 10
+      seconds: 30
 condition:
   condition: state
   entity_id: input_boolean.deck_auto_on

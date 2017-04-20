@@ -13,17 +13,15 @@ from homeassistant.components import zha
 _LOGGER = logging.getLogger(__name__)
 
 DEPENDENCIES = ['zha']
-DATA_ZHA_DICT = 'zha_devices'
+
 
 def setup_platform(hass, config, add_devices, discovery_info=None):
     """Setup Zigbee Home Automation switches."""
+    discovery_info = zha.get_discovery_info(hass, discovery_info)
     if discovery_info is None:
         return
 
-    """Restore original discovery items that were moved to make discovery info JSON serializable."""
-    discovered_endpoint_info = hass.data[DATA_ZHA_DICT][discovery_info['endpoint']]
-
-    add_devices([Switch(**discovered_endpoint_info)])
+    add_devices([Switch(**discovery_info)])
 
 
 class Switch(zha.Entity, SwitchDevice):

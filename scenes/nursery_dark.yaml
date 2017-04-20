@@ -1,0 +1,10 @@
+name: Nursery Dark Lights
+entities:
+  light.nursery_lamp:
+    state: on
+    rgb_color: [26, 4, 0]
+    brightness: 1
+  light.crib_lights:
+    state: on
+    rgb_color: [183, 25, 0]
+    brightness: 36

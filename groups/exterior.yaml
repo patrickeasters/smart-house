@@ -1,3 +1,12 @@
+view_exterior:
+  name: Outside
+  view: yes
+  icon: mdi:tree
+  entities:
+    - group.exterior_doors
+    - group.exterior_lights
+    - group.crawl_space
+
 exterior_doors:
   name: Exterior Doors
   control: hidden
@@ -6,6 +15,7 @@ exterior_doors:
     - binary_sensor.front_door
     - binary_sensor.garage_entry
     - binary_sensor.back_door
+    - binary_sensor.centralite_3320l_0bbe6586_1
 
 exterior_lights:
   name: Outside Lights

@@ -13,25 +13,23 @@ from homeassistant.util.color import HASS_COLOR_MIN, color_RGB_to_xy
 _LOGGER = logging.getLogger(__name__)
 
 DEPENDENCIES = ['zha']
-DATA_ZHA_DICT = 'zha_devices'
+
 
 @asyncio.coroutine
 def async_setup_platform(hass, config, async_add_devices, discovery_info=None):
     """Setup Zigbee Home Automation lights."""
+    discovery_info = zha.get_discovery_info(hass, discovery_info)
     if discovery_info is None:
         return
 
-    """Restore original discovery items that were moved to make discovery info JSON serializable."""
-    discovered_endpoint_info = hass.data[DATA_ZHA_DICT][discovery_info['endpoint']]
-
-    endpoint = discovered_endpoint_info['endpoint']
+    endpoint = discovery_info['endpoint']
     try:
         primaries = yield from endpoint.light_color['num_primaries']
-        discovered_endpoint_info['num_primaries'] = primaries
+        discovery_info['num_primaries'] = primaries
     except (AttributeError, KeyError):
         pass
 
-    async_add_devices([Light(**discovered_endpoint_info)])
+    async_add_devices([Light(**discovery_info)])
 
 
 class Light(zha.Entity, light.Light):

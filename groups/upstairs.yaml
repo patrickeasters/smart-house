@@ -1,3 +1,16 @@
+view_upstairs:
+  name: Upstairs
+  view: yes
+  icon: mdi:numeric-2-box
+  entities:
+    - group.master_bedroom
+    - group.nursery
+    - climate.upstairs
+    - binary_sensor.nursery_motion
+    - binary_sensor.master_bath_door_sensor_6_0
+    - scene.nursery_changing_lights
+    - scene.nursery_dark_lights
+
 nursery:
   name: Nursery
   icon: mdi:baby-buggy
@@ -12,3 +25,4 @@ master_bedroom:
     - input_select.master_fan
     - light.nightstand__courtney
     - light.nightstand__patrick
+    - light.osram_lightify_rt_rgbw_00084cf7_3

@@ -1,0 +1,13 @@
+>
+{{ [
+"OK",
+"Sure thing",
+"Okey doke arta choke",
+"Anything for you",
+"Done",
+"No worries",
+"Consider it done",
+"As you wish",
+"Affirmative",
+"No Problem"
+] | random }}

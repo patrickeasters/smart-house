@@ -1,3 +1,17 @@
+view_downstairs:
+  name: Downstairs
+  view: yes
+  icon: mdi:numeric-1-box
+  entities:
+    - climate.downstairs
+    - group.living_room
+    - group.downstairs_sensors
+    - group.downstairs_tv
+    - binary_sensor.back_door
+    - binary_sensor.front_door
+    - binary_sensor.garage_entry
+    - binary_sensor.stairs_motion_sensor_4_0
+
 living_room:
   name: Living Room
   icon: mdi:sofa

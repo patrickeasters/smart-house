@@ -6,7 +6,6 @@ https://home-assistant.io/components/zha/
 """
 import asyncio
 import logging
-import uuid
 
 import voluptuous as vol
 
@@ -17,7 +16,7 @@ import homeassistant.helpers.config_validation as cv
 
 
 # Definitions for interfacing with the rest of HA
-REQUIREMENTS = ['bellows==0.2.3']
+REQUIREMENTS = ['bellows==0.2.4']
 
 DOMAIN = 'zha'
 
@@ -25,8 +24,6 @@ CONF_USB_PATH = 'usb_path'
 CONF_DATABASE = 'database_path'
 CONF_DEVICE_CONFIG = 'device_config'
 DATA_DEVICE_CONFIG = 'zha_device_config'
-
-DATA_ZHA_DICT = 'zha_devices'
 
 DEVICE_CONFIG_SCHEMA_ENTRY = vol.Schema({
     vol.Optional(ha_const.CONF_TYPE): cv.string,
@@ -65,6 +62,8 @@ SERVICE_SCHEMAS = {
 
 # ZigBee definitions
 CENTICELSIUS = 'C-100'
+# Key in hass.data dict containing discovery info
+DISCOVERY_KEY = 'zha_discovery_info'
 
 # Internal definitions
 APPLICATION_CONTROLLER = None
@@ -86,7 +85,6 @@ def async_setup(hass, config):
     usb_path = config[DOMAIN].get(CONF_USB_PATH)
     yield from ezsp_.connect(usb_path)
 
-    hass.data[DATA_ZHA_DICT] = {}
     database = config[DOMAIN].get(CONF_DATABASE)
     APPLICATION_CONTROLLER = ControllerApplication(ezsp_, database)
     listener = ApplicationListener(hass, config)
@@ -117,6 +115,7 @@ class ApplicationListener:
         """Initialize the listener."""
         self._hass = hass
         self._config = config
+        hass.data[DISCOVERY_KEY] = hass.data.get(DISCOVERY_KEY, {})
 
     def device_joined(self, device):
         """Handle device joined.
@@ -166,28 +165,19 @@ class ApplicationListener:
             if has_valid_profile and component:
                 clusters = [endpoint.clusters[c] for c in used_clusters if c in
                             endpoint.clusters]
-
-                endpoint_info = {
+                discovery_info = {
                     'endpoint': endpoint,
                     'clusters': clusters,
                     'new_join': join,
                 }
-
-                """endpoint and clusters in hass.data by endpoint_id to make discovery info JSON serializable."""
-                uniqueKey = str(uuid.uuid4())
-                self._hass.data[DATA_ZHA_DICT][uniqueKey] = endpoint_info
-
-                discovery_info = {
-                    'endpoint': uniqueKey,
-                    'new_join': join,
-                }
-                self._hass.data[DATA_ZHA_DICT][uniqueKey].update(discovered_info)
+                discovery_info.update(discovered_info)
+                self._hass.data[DISCOVERY_KEY][device_key] = discovery_info
 
                 yield from discovery.async_load_platform(
                     self._hass,
                     component,
                     DOMAIN,
-                    discovery_info,
+                    {'discovery_key': device_key},
                     self._config,
                 )
 
@@ -199,28 +189,20 @@ class ApplicationListener:
                     continue
 
                 component = zha_const.SINGLE_CLUSTER_DEVICE_CLASS[cluster_type]
-
-                endpoint_info = {
+                discovery_info = {
                     'endpoint': endpoint,
                     'clusters': [cluster],
                     'new_join': join,
                 }
-
-                """endpoint and clusters in hass.data by endpoint_id to make discovery info JSON serializable."""
-                uniqueKey = str(uuid.uuid4())
-                self._hass.data[DATA_ZHA_DICT][uniqueKey] = endpoint_info
-
-                discovery_info = {
-                    'endpoint': uniqueKey,
-                    'new_join': join,
-                }
-                self._hass.data[DATA_ZHA_DICT][uniqueKey].update(discovered_info)
+                discovery_info.update(discovered_info)
+                cluster_key = '%s-%s' % (device_key, cluster_id)
+                self._hass.data[DISCOVERY_KEY][cluster_key] = discovery_info
 
                 yield from discovery.async_load_platform(
                     self._hass,
                     component,
                     DOMAIN,
-                    discovery_info,
+                    {'discovery_key': cluster_key},
                     self._config,
                 )
 
@@ -299,3 +281,20 @@ def _discover_endpoint_info(endpoint):
                 pass
 
     return extra_info
+
+
+def get_discovery_info(hass, discovery_info):
+    """Get the full discovery info for a device.
+
+    Some of the info passed to a platform is not JSON serializable, so cannot
+    be put in the discovery_info. This helper fetches hte "full" discovery
+    info from hass.data, based on the serializable information passed to the
+    platform.
+    """
+    if discovery_info is None:
+        return
+
+    discovery_key = discovery_info.get('discovery_key', None)
+    all_discovery_info = hass.data.get(DISCOVERY_KEY, {})
+    discovery_info = all_discovery_info.get(discovery_key, None)
+    return discovery_info

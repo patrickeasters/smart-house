@@ -1,3 +1,16 @@
+default_view:
+  name: Home
+  view: yes
+  icon: mdi:home
+  entities:
+    - group.glance
+    - group.scenes
+    - device_tracker.speiphone
+    - device_tracker.courtney_courtneyiphone
+    - sensor.work_commute_from_home
+    - sensor.pws_weather
+    - binary_sensor.front_porch_motion_sensor_5_0
+
 glance:
   name: At a Glance
   control: hidden
@@ -13,3 +26,4 @@ scenes:
   control: hidden
   entities:
     - scene.nursery_changing_lights
+    - scene.nursery_dark_lights
