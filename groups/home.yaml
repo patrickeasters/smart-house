@@ -10,6 +10,10 @@ default_view:
     - sensor.work_commute_from_home
     - sensor.pws_weather
     - binary_sensor.front_porch_motion_sensor_5_0
+    - media_player.apple_tv
+    - media_player.living_room_chromecast
+    - media_player.spotify
+    - media_player.living_room_tv
 
 glance:
   name: At a Glance

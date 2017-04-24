@@ -2,15 +2,17 @@ speech:
   type: plaintext
   text: >
     {%- if is_state('input_boolean.dog_needs_food', 'on') -%}
-      {{ [
+      {% set responses = [
       "She's probably hungry",
       "She could use some food",
       "She would appreciate some food"
-      ] | random }}
+      ] %}
     {%- else -%}
-      {{ [
+      {% set responses = [
       "She's already been fed",
       "Don't let her fool you, she already ate",
       "As much as she'd love it, she doesn't need any food"
-      ] | random }}
+      ] %}
     {%- endif -%}
+    {% set rindex =  (range(0, (responses | length - 1) )|random) -%}
+    {{responses[rindex]}}

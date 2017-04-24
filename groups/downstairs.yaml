@@ -6,7 +6,6 @@ view_downstairs:
     - climate.downstairs
     - group.living_room
     - group.downstairs_sensors
-    - group.downstairs_tv
     - binary_sensor.back_door
     - binary_sensor.front_door
     - binary_sensor.garage_entry
@@ -20,10 +19,3 @@ living_room:
     - light.osram_lightify_rt_rgbw_0008419b_3
     - light.osram_lightify_rt_rgbw_00083dd9_3
     - input_select.downstairs_fan
-
-downstairs_tv:
-  name: Entertainment
-  entities:
-    - media_player.apple_tv
-    - media_player.living_room_chromecast
-    - media_player.spotify
