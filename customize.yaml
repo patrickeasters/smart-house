@@ -32,6 +32,9 @@ sensor.crawl_space_multi_sensor_12_10:
   hidden: true
 sensor.work_commute_from_home:
   friendly_name: "To Work"
+sensor.dehumidifier_plug_power_24_4:
+  friendly_name: "Dehumidifier Power Consumption"
+  icon: mdi:power-plug
 # Automation Booleans
 input_boolean.lamp_auto_on:
   hidden: true
@@ -55,11 +58,15 @@ light.downstairs_fan_level_2_0:
   hidden: true
 light.master_bedroom_fan_level_8_0:
   hidden: true
+light.downstairs_fan_light_level_23_0:
+  friendly_name: "Living Room Fan Light"
 # Switches
 switch.front_outside_lights_switch_9_0_2:
   friendly_name: "Outside Garage Lights"
 switch.front_outside_lights_switch_9_0_3:
   friendly_name: "Side Flood Lights"
+switch.dehumidifier_plug_switch_24_0:
+  friendly_name: "Dehumidifier Switch"
 # Zones
 zone.home:
   track_ios: true

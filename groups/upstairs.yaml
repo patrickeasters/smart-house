@@ -9,7 +9,8 @@ view_upstairs:
     - binary_sensor.nursery_motion
     - binary_sensor.master_bath_door_sensor_6_0
     - scene.nursery_changing_lights
-    - scene.nursery_dark_lights
+    - scene.nursery_night_lights
+    - scene.bedroom_night_lights
 
 nursery:
   name: Nursery

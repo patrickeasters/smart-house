@@ -1,0 +1,10 @@
+name: Bedroom Night Lights
+entities:
+  light.nightstand__courtney:
+    state: on
+    color_temp: 500
+    brightness: 1
+  light.nightstand__patrick:
+    state: on
+    color_temp: 500
+    brightness: 1

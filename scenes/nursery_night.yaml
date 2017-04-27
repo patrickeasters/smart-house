@@ -1,4 +1,4 @@
-name: Nursery Dark Lights
+name: Nursery Night Lights
 entities:
   light.nursery_lamp:
     state: on

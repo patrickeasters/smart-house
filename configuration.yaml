@@ -48,8 +48,10 @@ scene: !include_dir_list scenes
 
 # Advertise Hue
 emulated_hue:
+  type: alexa
   exposed_domains:
     - switch
+    - scene
     - light
     - group
     - media_player
@@ -67,12 +69,12 @@ notify:
 
 # z-wave
 zwave:
-  usb_path: /dev/ttyUSB0
+  usb_path: /dev/zwave
   device_config: !include zwave_devices.yaml
 
 # zigbee home automation
 zha:
-  usb_path: /dev/ttyUSB1
+  usb_path: /dev/zigbee
   database_path: /home/hass/.homeassistant/zigbee.db
 
 # zones

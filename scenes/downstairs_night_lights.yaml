@@ -1,0 +1,15 @@
+name: Downstairs Night Lights
+entities:
+  light.downstairs_lamp:
+    state: on
+    brightness: 160
+  light.osram_lightify_rt_rgbw_00083dd9_3:
+    state: on
+    rgb_color: [68, 9, 44]
+    brightness: 5
+  light.osram_lightify_rt_rgbw_0008419b_3:
+    state: on
+    rgb_color: [22, 1, 44]
+    brightness: 1
+  light.downstairs_fan_light_level_23_0:
+    state: off

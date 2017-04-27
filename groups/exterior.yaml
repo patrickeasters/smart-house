@@ -34,3 +34,5 @@ crawl_space:
     - sensor.crawl_space_multi_luminance_12_3
     - sensor.crawl_space_multi_relative_humidity_12_5
     - sensor.crawl_space_multi_temperature_12_1
+    - switch.dehumidifier_plug_switch_24_0
+    - sensor.dehumidifier_plug_power_24_4

@@ -78,3 +78,17 @@ sensor.water_heater_leak_sourcenodeid_14_2:
   ignored: true
 switch.front_outside_lights_switch_9_0:
   ignored: true
+sensor.dehumidifier_plug_energy_24_0:
+  ignored: true
+sensor.dehumidifier_plug_exporting_24_32:
+  ignored: true
+sensor.dehumidifier_plug_interval_24_10:
+  ignored: true
+sensor.dehumidifier_plug_power_24_8:
+  ignored: true
+sensor.dehumidifier_plug_previous_reading_24_1:
+  ignored: true
+sensor.dehumidifier_plug_previous_reading_24_9:
+  ignored: true
+sensor.dehumidifier_plug_interval_24_2:
+  ignored: true

@@ -30,4 +30,5 @@ scenes:
   control: hidden
   entities:
     - scene.nursery_changing_lights
-    - scene.nursery_dark_lights
+    - scene.nursery_night_lights
+    - scene.bedroom_night_lights
