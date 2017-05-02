@@ -4,7 +4,9 @@ entities:
     state: on
     color_temp: 500
     brightness: 1
+    transition: 2
   light.nightstand__patrick:
     state: on
     color_temp: 500
     brightness: 1
+    transition: 2

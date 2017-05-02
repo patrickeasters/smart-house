@@ -4,7 +4,9 @@ entities:
     state: on
     rgb_color: [19, 9, 1]
     brightness: 1
+    transition: 2
   light.crib_lights:
     state: on
     rgb_color: [146, 100, 33]
     brightness: 43
+    transition: 2

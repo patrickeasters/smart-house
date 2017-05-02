@@ -10,6 +10,7 @@ view_downstairs:
     - binary_sensor.front_door
     - binary_sensor.garage_entry
     - binary_sensor.stairs_motion_sensor_4_0
+    - scene.downstairs_night_lights
 
 living_room:
   name: Living Room

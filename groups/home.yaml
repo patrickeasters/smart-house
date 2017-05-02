@@ -29,6 +29,7 @@ scenes:
   name: Quick Scenes
   control: hidden
   entities:
+    - scene.downstairs_night_lights
     - scene.nursery_changing_lights
     - scene.nursery_night_lights
     - scene.bedroom_night_lights

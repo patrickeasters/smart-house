@@ -60,6 +60,10 @@ emulated_hue:
 alexa:
   intents: !include_dir_named alexa_intents
 
+#IFTTT
+ifttt:
+  key: !secret ifttt_key
+
 # Push notifications
 notify:
   - name: pushover
