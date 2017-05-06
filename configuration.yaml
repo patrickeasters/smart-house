@@ -36,6 +36,7 @@ mqtt:
 # include a bunch of stuff to make this file cleaner
 group: !include_dir_merge_named groups
 switch: !include_dir_list switches
+camera: !include_dir_list cameras
 climate: !include_dir_list climate
 binary_sensor: !include_dir_list binary_sensors
 sensor: !include_dir_list sensors
