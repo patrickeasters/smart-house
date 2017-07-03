@@ -71,6 +71,9 @@ notify:
     platform: pushover
     api_key: !secret pushover_api_key
     user_key: !secret pushover_user_key
+  - platform: webostv
+    host: !secret living_room_tv_host
+    name: downstairs_tv
 
 # z-wave
 zwave:

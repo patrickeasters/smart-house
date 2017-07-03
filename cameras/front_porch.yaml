@@ -1,5 +1,0 @@
-platform: amcrest
-name: Front Porch
-host: 172.16.53.10
-username: !secret amcrest_user
-password: !secret amcrest_pass

@@ -18,4 +18,4 @@ action:
       entity_id: input_boolean.nursery_auto_on
   - service: scene.turn_on
     data:
-      entity_id: scene.nursery_changing_lights
+      entity_id: scene.nursery_night_lights
