@@ -7,7 +7,7 @@ view_upstairs:
     - group.nursery
     - climate.upstairs
     - binary_sensor.nursery_motion
-    - binary_sensor.master_bath_door_sensor_6_0
+    - binary_sensor.master_bath_door_sensor
     - scene.nursery_changing_lights
     - scene.nursery_night_lights
     - scene.bedroom_night_lights
@@ -23,7 +23,7 @@ master_bedroom:
   name: Master Bedroom
   icon: mdi:hotel
   entities:
-    - input_select.master_fan
+    - fan.master_bedroom_fan_level
     - light.nightstand__courtney
     - light.nightstand__patrick
     - light.osram_lightify_rt_rgbw_00084cf7_3

@@ -22,18 +22,18 @@ exterior_lights:
   name: Outside Lights
   icon: mdi:lightbulb
   entities:
-    - switch.front_porch_light_switch_11_0
-    - switch.deck_lights_switch_10_0
-    - switch.front_outside_lights_switch_9_0_2
-    - switch.front_outside_lights_switch_9_0_3
+    - switch.front_porch_light_switch
+    - switch.deck_lights_switch
+    - switch.front_outside_lights_switch_2
+    - switch.front_outside_lights_switch_3
 
 crawl_space:
   name: Crawl Space
   control: hidden
   entities:
     - binary_sensor.crawl_space_motion
-    - sensor.crawl_space_multi_luminance_12_3
-    - sensor.crawl_space_multi_relative_humidity_12_5
-    - sensor.crawl_space_multi_temperature_12_1
-    - switch.dehumidifier_plug_switch_24_0
-    - sensor.dehumidifier_plug_power_24_4
+    - sensor.crawl_space_multi_luminance
+    - sensor.crawl_space_multi_relative_humidity
+    - sensor.crawl_space_multi_temperature
+    - switch.dehumidifier_plug_switch
+    - sensor.dehumidifier_plug_power

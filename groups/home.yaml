@@ -9,7 +9,7 @@ default_view:
     - device_tracker.courtney_courtneyiphone
     - sensor.work_commute_from_home
     - sensor.pws_weather
-    - binary_sensor.front_porch_motion_sensor_5_0
+    - binary_sensor.front_porch_motion_sensor
     - media_player.apple_tv
     - media_player.living_room_chromecast
     - media_player.spotify

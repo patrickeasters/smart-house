@@ -2,7 +2,7 @@
 alias: "Dog Food Reset"
 trigger:
   - platform: state
-    entity_id: binary_sensor.dog_food_bin_sensor_3_0
+    entity_id: binary_sensor.dog_food_bin_sensor
     to: "on"
 action:
   - service: input_boolean.turn_off

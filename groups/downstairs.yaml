@@ -9,7 +9,7 @@ view_downstairs:
     - binary_sensor.back_door
     - binary_sensor.front_door
     - binary_sensor.garage_entry
-    - binary_sensor.stairs_motion_sensor_4_0
+    - binary_sensor.stairs_motion_sensor
     - scene.downstairs_night_lights
 
 living_room:
@@ -17,7 +17,7 @@ living_room:
   icon: mdi:sofa
   entities:
     - light.downstairs_lamp
-    - light.downstairs_fan_light_level_23_0
+    - light.downstairs_fan_light_level
     - light.osram_lightify_rt_rgbw_0008419b_3
     - light.osram_lightify_rt_rgbw_00083dd9_3
-    - input_select.downstairs_fan
+    - fan.downstairs_fan_level

@@ -1,7 +1,7 @@
 alias: "Lamp Auto On"
 trigger:
   - platform: state
-    entity_id: binary_sensor.stairs_motion_sensor_4_0
+    entity_id: binary_sensor.stairs_motion_sensor
     to: "on"
 condition:
   condition: and

@@ -1,38 +1,38 @@
 # Binary Sensors
-binary_sensor.dog_food_bin_sensor_3_0:
+binary_sensor.dog_food_bin_sensor:
   icon: mdi:bone
-binary_sensor.stairs_motion_sensor_4_0:
+binary_sensor.stairs_motion_sensor:
   device_class: motion
-binary_sensor.front_porch_motion_sensor_5_0:
+binary_sensor.front_porch_motion_sensor:
   device_class: motion
 binary_sensor.crawl_space_motion:
   device_class: motion
 binary_sensor.nursery_motion:
   device_class: motion
-binary_sensor.master_bath_door_sensor_6_0:
+binary_sensor.master_bath_door_sensor:
   device_class: opening
-binary_sensor.crawl_space_multi_sensor_12_0:
+binary_sensor.crawl_space_multi_sensor:
   hidden: true
-binary_sensor.nursery_multi_sensor_7_0:
+binary_sensor.nursery_multi_sensor:
   hidden: true
 binary_sensor.centralite_3320l_0bbe6586_1:
   friendly_name: "Crawl Space Door"
 # Sensors
-sensor.crawl_space_multi_relative_humidity_12_5:
+sensor.crawl_space_multi_relative_humidity:
   icon: mdi:cup-water
-sensor.crawl_space_multi_luminance_12_3:
+sensor.crawl_space_multi_luminance:
   icon: mdi:flashlight
-sensor.nursery_multi_relative_humidity_7_5:
+sensor.nursery_multi_relative_humidity:
   icon: mdi:cup-water
-sensor.nursery_multi_luminance_7_3:
+sensor.nursery_multi_luminance:
   icon: mdi:flashlight
-sensor.nursery_multi_burglar_7_10:
+sensor.nursery_multi_burglar:
   hidden: true
-sensor.crawl_space_multi_sensor_12_10:
+sensor.crawl_space_multi_sensor:
   hidden: true
 sensor.work_commute_from_home:
   friendly_name: "To Work"
-sensor.dehumidifier_plug_power_24_4:
+sensor.dehumidifier_plug_power:
   friendly_name: "Dehumidifier Power Consumption"
   icon: mdi:power-plug
 # Automation Booleans
@@ -54,18 +54,14 @@ light.osram_lightify_rt_rgbw_00083dd9_3:
   friendly_name: "Living Room Left"
 light.osram_lightify_rt_rgbw_00084cf7_3:
   friendly_name: "Master Bath Shower"
-light.downstairs_fan_level_2_0:
-  hidden: true
-light.master_bedroom_fan_level_8_0:
-  hidden: true
-light.downstairs_fan_light_level_23_0:
+light.downstairs_fan_light_level:
   friendly_name: "Living Room Fan Light"
 # Switches
-switch.front_outside_lights_switch_9_0_2:
+switch.front_outside_lights_switch_2:
   friendly_name: "Outside Garage Lights"
-switch.front_outside_lights_switch_9_0_3:
+switch.front_outside_lights_switch_3:
   friendly_name: "Side Flood Lights"
-switch.dehumidifier_plug_switch_24_0:
+switch.dehumidifier_plug_switch:
   friendly_name: "Dehumidifier Switch"
 # Zones
 zone.home:

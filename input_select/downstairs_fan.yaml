@@ -1,6 +1,0 @@
-name: Downstairs Fan
-options:
- - "Off"
- - "Low"
- - "Medium"
- - "High"

@@ -1,7 +1,7 @@
 alias: "Nursery Auto Off"
 trigger:
   - platform: state
-    entity_id: sensor.nursery_multi_burglar_7_10
+    entity_id: sensor.nursery_multi_burglar
     to: "0"
     for:
       minutes: 5

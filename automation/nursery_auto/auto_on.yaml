@@ -1,7 +1,7 @@
 alias: "Nursery Auto On"
 trigger:
   - platform: numeric_state
-    entity_id: sensor.nursery_multi_burglar_7_10
+    entity_id: sensor.nursery_multi_burglar
     above: 7
 condition:
   condition: and

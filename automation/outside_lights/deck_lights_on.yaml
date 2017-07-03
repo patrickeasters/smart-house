@@ -14,7 +14,7 @@ condition:
 action:
   - service: homeassistant.turn_on
     data:
-      entity_id: switch.deck_lights_switch_10_0
+      entity_id: switch.deck_lights_switch
   - service: homeassistant.turn_on
     data:
       entity_id: input_boolean.deck_auto_on
