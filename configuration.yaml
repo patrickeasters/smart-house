@@ -43,7 +43,7 @@ sensor: !include_dir_list sensors
 light: !include_dir_list lights
 media_player: !include_dir_list media
 input_boolean: !include_dir_named input_bool
-input_select: !include_dir_named input_select
+#input_select: !include_dir_named input_select
 automation: !include_dir_list automation
 scene: !include_dir_list scenes
 

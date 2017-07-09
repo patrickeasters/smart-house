@@ -2,9 +2,9 @@
 alias: "Dog Food Activate"
 trigger:
   - platform: time
-    after: '01:00:00'
+    at: '01:00:00'
   - platform: time
-    after: '16:00:00'
+    at: '16:00:00'
 action:
   - service: input_boolean.turn_on
     data:
