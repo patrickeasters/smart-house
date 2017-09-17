@@ -19,6 +19,7 @@ glance:
   name: At a Glance
   control: hidden
   entities:
+    - sensor.paisley_food
     - group.exterior_doors
     - group.exterior_lights
     - group.living_room

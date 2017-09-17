@@ -5,6 +5,7 @@ view_downstairs:
   entities:
     - climate.downstairs
     - group.living_room
+    - group.kitchen
     - group.downstairs_sensors
     - binary_sensor.back_door
     - binary_sensor.front_door
@@ -21,3 +22,9 @@ living_room:
     - light.osram_lightify_rt_rgbw_0008419b_3
     - light.osram_lightify_rt_rgbw_00083dd9_3
     - fan.downstairs_fan_level
+
+kitchen:
+  name: Kitchen
+  icon: mdi:food-variant
+  entities:
+    - light.kitchen_cabinet

@@ -17,6 +17,7 @@ exterior_doors:
     - binary_sensor.garage_entry
     - binary_sensor.back_door
     - binary_sensor.centralite_3320l_0bbe6586_1
+    - cover.garage
 
 exterior_lights:
   name: Outside Lights

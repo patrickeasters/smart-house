@@ -15,6 +15,8 @@ homeassistant:
 
 frontend:
 
+config:
+
 http:
   base_url: !secret hass_base_url
   api_password: !secret hass_password
@@ -38,6 +40,7 @@ group: !include_dir_merge_named groups
 switch: !include_dir_list switches
 camera: !include_dir_list cameras
 climate: !include_dir_list climate
+cover: !include_dir_list covers
 binary_sensor: !include_dir_list binary_sensors
 sensor: !include_dir_list sensors
 light: !include_dir_list lights

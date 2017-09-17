@@ -35,6 +35,8 @@ sensor.work_commute_from_home:
 sensor.dehumidifier_plug_power:
   friendly_name: "Dehumidifier Power Consumption"
   icon: mdi:power-plug
+sensor.paisley_food:
+  icon: mdi:silverware
 # Automation Booleans
 input_boolean.lamp_auto_on:
   hidden: true

@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  paisley_food:
+    value_template: '{% if is_state("input_boolean.dog_needs_food", "on") %}yes{% else %}no{% endif %}'
+    friendly_name: 'Paisley Needs Food?'

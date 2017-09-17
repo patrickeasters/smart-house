@@ -1,0 +1,6 @@
+platform: opengarage
+covers:
+  garage:
+    host: !secret garage_hostname
+    device_key: !secret garage_devicekey
+    name: Garage Door
