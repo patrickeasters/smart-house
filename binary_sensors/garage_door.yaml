@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  garage_door:
+    friendly_name: Garage Door
+    value_template: '{{ states.cover.garage_door.attributes["door_state"] == "open" }}'

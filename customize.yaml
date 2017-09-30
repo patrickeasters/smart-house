@@ -11,12 +11,17 @@ binary_sensor.nursery_motion:
   device_class: motion
 binary_sensor.master_bath_door_sensor:
   device_class: opening
+binary_sensor.garage_door:
+  device_class: opening
 binary_sensor.crawl_space_multi_sensor:
   hidden: true
 binary_sensor.nursery_multi_sensor:
   hidden: true
 binary_sensor.centralite_3320l_0bbe6586_1:
   friendly_name: "Crawl Space Door"
+# covers
+cover.garage_door:
+  device_class: garage
 # Sensors
 sensor.crawl_space_multi_relative_humidity:
   icon: mdi:cup-water

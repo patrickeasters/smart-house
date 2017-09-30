@@ -1,0 +1,14 @@
+alias: "Garage Door Open"
+trigger:
+  - platform: time
+    at: '20:30:00'
+condition:
+  condition: state
+  entity_id: binary_sensor.garage_door
+  state: "on"
+  for:
+    minutes: 5
+action:
+  - service: notify.pushover
+    data:
+      message: "Don't forget to close the garage door!"

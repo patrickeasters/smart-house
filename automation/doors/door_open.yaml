@@ -1,0 +1,11 @@
+alias: "Door Open"
+trigger:
+  - platform: state
+    entity_id: binary_sensor.garage_entry, binary_sensor.front_door, binary_sensor.back_door
+    to: "on"
+    for:
+      minutes: 5
+action:
+  - service: notify.pushover
+    data_template:
+      message: "{{ trigger.to_state.attributes.friendly_name }} has been open for 5 minutes."

@@ -59,6 +59,8 @@ emulated_hue:
     - light
     - group
     - media_player
+    - fan
+    - cover
 
 # Alexa
 alexa:
