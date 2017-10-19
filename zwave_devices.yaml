@@ -76,8 +76,6 @@ sensor.water_heater_leak_flood:
   ignored: true
 sensor.water_heater_leak_sourcenodeid:
   ignored: true
-switch.front_outside_lights_switch:
-  ignored: true
 sensor.dehumidifier_plug_energy:
   ignored: true
 sensor.dehumidifier_plug_exporting:
