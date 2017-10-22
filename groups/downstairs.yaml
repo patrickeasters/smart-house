@@ -28,4 +28,4 @@ kitchen:
   name: Kitchen
   icon: mdi:food-variant
   entities:
-    - light.kitchen_cabinet
+    - light.kitchen_under_cabinet

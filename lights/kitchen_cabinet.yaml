@@ -1,0 +1,10 @@
+platform: mqtt
+name: "Kitchen Under Cabinet"
+state_topic: "001AAE4A/w1/light/status"
+command_topic: "001AAE4A/w1/light/switch"
+brightness_state_topic: "001AAE4A/w1/brightness/status"
+brightness_command_topic: "001AAE4A/w1/brightness/set"
+qos: 0
+payload_on: "ON"
+payload_off: "OFF"
+optimistic: false
