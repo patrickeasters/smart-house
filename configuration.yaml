@@ -94,7 +94,8 @@ zone:
 # recorder
 recorder:
   db_url: !secret mysql_connection
-  purge_days: 7
+  purge_interval: 1
+  purge_keep_days: 7
   exclude:
     entities:
       - sun.sun
