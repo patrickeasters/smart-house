@@ -91,6 +91,9 @@ zone:
     longitude: -78.637566
     radius: 150
 
+# show the map
+map:
+
 # recorder
 recorder:
   db_url: !secret mysql_connection
