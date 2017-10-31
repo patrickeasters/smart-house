@@ -4,9 +4,14 @@ trigger:
     entity_id: binary_sensor.front_door
     to: "on"
 condition:
-  condition: state
-  entity_id: sun.sun
-  state: "below_horizon"
+  condition: and
+  conditions:
+    - condition: state
+      entity_id: sun.sun
+      state: "below_horizon"
+    - condition: state
+      entity_id: switch.front_porch_light_switch
+      state: "off"
 action:
   - service: homeassistant.turn_on
     data:
