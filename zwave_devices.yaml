@@ -2,12 +2,21 @@
 fan.downstairs_fan_level:
   refresh_value: true
   delay: 3
+  polling_intensity: 1
 fan.master_bedroom_fan_level:
   refresh_value: true
   delay: 3
+  polling_intensity: 1
 light.wall_plug_level:
   refresh_value: true
   delay: 3
+  polling_intensity: 2
+switch.front_porch_light_switch:
+  polling_intensity: 1
+switch.front_outside_lights_switch_2:
+  polling_intensity: 2
+switch.front_outside_lights_switch_3:
+  polling_intensity: 2
 
 # Ignore all this extra crap
 sensor.crawl_space_multi_alarm_level:
