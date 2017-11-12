@@ -25,6 +25,7 @@ glance:
     - group.living_room
     - group.nursery
     - group.master_bedroom
+    - group.master_bathroom
 
 scenes:
   name: Quick Scenes

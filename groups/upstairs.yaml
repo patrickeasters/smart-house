@@ -4,10 +4,11 @@ view_upstairs:
   icon: mdi:numeric-2-box
   entities:
     - group.master_bedroom
+    - group.master_bathroom
     - group.nursery
     - climate.upstairs
     - binary_sensor.nursery_motion
-    - binary_sensor.master_bath_door_sensor
+    - binary_sensor.master_bathroom_door_sensor
     - scene.nursery_changing_lights
     - scene.nursery_night_lights
     - scene.bedroom_night_lights
@@ -26,4 +27,10 @@ master_bedroom:
     - fan.master_bedroom_fan_level
     - light.nightstand__courtney
     - light.nightstand__patrick
+
+master_bathroom:
+  name: Master Bathroom
+  icon: mdi:water
+  entities:
+    - light.master_bathroom_vanity_lights_level
     - light.osram_lightify_rt_rgbw_00084cf7_3
