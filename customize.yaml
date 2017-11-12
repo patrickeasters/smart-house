@@ -68,6 +68,8 @@ light.osram_lightify_rt_rgbw_00084cf7_3:
   friendly_name: "Master Bath Shower"
 light.downstairs_fan_light_level:
   friendly_name: "Living Room Fan Light"
+light.master_bathroom_vanity_lights_level:
+  friendly_name: "Master Bathroom Vanity"
 # Switches
 switch.front_outside_lights_switch_2:
   friendly_name: "Outside Garage Lights"
