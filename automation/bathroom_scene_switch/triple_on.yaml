@@ -1,0 +1,12 @@
+alias: "Bathroom Triple Tap On"
+trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.master_bathroom_vanity_lights
+      scene_id: 1
+      scene_data: 4
+action:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.shower_night_lights

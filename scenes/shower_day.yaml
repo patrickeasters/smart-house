@@ -1,0 +1,10 @@
+name: Shower Lights
+entities:
+  light.osram_lightify_rt_rgbw_00084cf7_3:
+    state: on
+    brightness: 200
+    kevlin: 3000
+    transition: 2
+  light.master_bathroom_vanity_lights_level:
+    state: on
+    brightness: 255

@@ -1,12 +1,12 @@
-alias: "Living Room Double Tap On"
+alias: "Bathroom Double Tap On"
 trigger:
   - platform: event
     event_type: zwave.scene_activated
     event_data:
-      entity_id: zwave.downstairs_fan_light
+      entity_id: zwave.master_bathroom_vanity_lights
       scene_id: 1
       scene_data: 3
 action:
   - service: scene.turn_on
     data:
-      entity_id: scene.downstairs_night_lights
+      entity_id: scene.shower_lights

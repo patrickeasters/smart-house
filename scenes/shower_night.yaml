@@ -1,0 +1,9 @@
+name: Shower Night Lights
+entities:
+  light.osram_lightify_rt_rgbw_00084cf7_3:
+    state: on
+    rgb_color: [20, 63, 255]
+    brightness: 5
+    transition: 2
+  light.master_bathroom_vanity_lights_level:
+    state: off
