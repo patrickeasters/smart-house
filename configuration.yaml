@@ -21,7 +21,7 @@ http:
   base_url: !secret hass_base_url
   api_password: !secret hass_password
   use_x_forwarded_for: true
-  ip_ban_enabled: true
+  ip_ban_enabled: false
   login_attempts_threshold: 5
 
 device_tracker:

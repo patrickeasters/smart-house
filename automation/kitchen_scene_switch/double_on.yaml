@@ -1,0 +1,13 @@
+alias: "Kitchen Double Tap On"
+trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.kitchen_table_light
+      scene_id: 1
+      scene_data: 3
+action:
+  - service: light.turn_on
+    data:
+      entity_id: light.kitchen_under_cabinet
+      brightness: 255

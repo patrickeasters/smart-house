@@ -1,0 +1,12 @@
+alias: "Kitchen Triple Tap Off"
+trigger:
+  - platform: event
+    event_type: zwave.scene_activated
+    event_data:
+      entity_id: zwave.kitchen_table_light
+      scene_id: 2
+      scene_data: 4
+action:
+  - service: homeassistant.turn_off
+    data:
+      entity_id: group.kitchen
