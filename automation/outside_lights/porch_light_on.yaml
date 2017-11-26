@@ -6,9 +6,8 @@ trigger:
 condition:
   condition: and
   conditions:
-    - condition: state
-      entity_id: sun.sun
-      state: "below_horizon"
+    - condition: sun
+      after: sunset
     - condition: state
       entity_id: switch.front_porch_light_switch
       state: "off"

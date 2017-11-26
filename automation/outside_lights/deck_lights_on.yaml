@@ -6,11 +6,8 @@ trigger:
 condition:
   condition: and
   conditions:
-    - condition: state
-      entity_id: sun.sun
-      state: "below_horizon"
-    - condition: time
-      after: '12:00:00'
+    - condition: sun
+      after: sunset
     - condition: state
       entity_id: switch.deck_lights_switch
       state: "off"
