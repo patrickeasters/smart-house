@@ -11,3 +11,6 @@ action:
   - service: light.turn_off
     data:
       entity_id: light.downstairs_lamp
+  - service: input_boolean.turn_off
+    data:
+      entity_id: input_boolean.lamp_auto_on
