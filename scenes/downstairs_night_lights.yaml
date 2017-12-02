@@ -14,5 +14,9 @@ entities:
     rgb_color: [22, 1, 44]
     brightness: 1
     transition: 2
+  light.wall_plug_level:
+    state: on
+    brightness: 255
+    transition: 2
   light.downstairs_fan_light_level:
     state: off
