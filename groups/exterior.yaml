@@ -27,6 +27,7 @@ exterior_lights:
     - switch.deck_lights_switch
     - switch.front_outside_lights_switch_2
     - switch.front_outside_lights_switch_3
+    - switch.front_christmas_lights_switch
 
 crawl_space:
   name: Crawl Space

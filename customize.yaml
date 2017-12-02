@@ -74,6 +74,9 @@ light.kitchen_overhead_light_level:
   friendly_name: "Kitchen Overhead"
 light.kitchen_table_light_level:
   friendly_name: "Kitchen Table Light"
+light.wall_plug_level:
+  friendly_name: "Christmas Tree"
+  icon: mdi:pine-tree
 # Switches
 switch.front_outside_lights_switch_2:
   friendly_name: "Outside Garage Lights"

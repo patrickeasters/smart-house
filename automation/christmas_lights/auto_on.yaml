@@ -1,0 +1,8 @@
+alias: "Christmas Lights On"
+trigger:
+  - platform: sun
+    event: sunset
+action:
+  - service: homeassistant.turn_on
+    data:
+      entity_id: switch.front_christmas_lights_switch

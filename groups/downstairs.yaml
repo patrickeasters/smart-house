@@ -18,6 +18,7 @@ living_room:
   name: Living Room
   icon: mdi:sofa
   entities:
+    - light.wall_plug_level
     - light.downstairs_lamp
     - light.downstairs_fan_light_level
     - light.osram_lightify_rt_rgbw_0008419b_3
