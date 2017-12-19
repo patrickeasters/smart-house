@@ -9,6 +9,6 @@ condition:
   entity_id: input_boolean.dog_needs_food
   state: "on"
 action:
-  - service: notify.pushover
+  - service: notify.phones
     data:
       message: "Don't forget to feed Paisley!"

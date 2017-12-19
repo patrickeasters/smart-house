@@ -6,6 +6,6 @@ trigger:
     for:
       minutes: 5
 action:
-  - service: notify.pushover
+  - service: notify.phones
     data_template:
       message: "{{ trigger.to_state.attributes.friendly_name }} has been open for 5 minutes."

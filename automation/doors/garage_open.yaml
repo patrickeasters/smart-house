@@ -9,6 +9,6 @@ condition:
   for:
     minutes: 5
 action:
-  - service: notify.pushover
+  - service: notify.phones
     data:
       message: "Don't forget to close the garage door!"
