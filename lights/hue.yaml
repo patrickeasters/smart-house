@@ -1,5 +1,0 @@
-# Hue Lights
-platform: hue
-host: !secret hue_hostname
-allow_unreachable: true
-allow_hue_groups: false

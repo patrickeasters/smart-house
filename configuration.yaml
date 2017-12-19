@@ -58,6 +58,13 @@ alexa:
 ifttt:
   key: !secret ifttt_key
 
+# Hue
+hue:
+  bridges:
+    - host: !secret hue_hostname
+      allow_unreachable: true
+      allow_hue_groups: false
+
 # Push notifications
 notify:
   - name: pushover
