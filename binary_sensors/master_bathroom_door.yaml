@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  master_bathroom_door:
+    value_template: "{{ is_state('sensor.master_bathroom_door_alarm_level', '255') }}"
+    friendly_name: Master Bathroom Door

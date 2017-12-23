@@ -9,8 +9,10 @@ binary_sensor.crawl_space_motion:
   device_class: motion
 binary_sensor.nursery_motion:
   device_class: motion
-binary_sensor.master_bathroom_door_sensor:
+binary_sensor.master_bathroom_door:
   device_class: opening
+binary_sensor.master_bathroom_door_sensor:
+  hidden: true
 binary_sensor.garage_door:
   device_class: opening
 binary_sensor.crawl_space_multi_sensor:

@@ -8,7 +8,7 @@ view_upstairs:
     - group.nursery
     - climate.upstairs
     - binary_sensor.nursery_motion
-    - binary_sensor.master_bathroom_door_sensor
+    - binary_sensor.master_bathroom_door
     - scene.nursery_changing_lights
     - scene.nursery_night_lights
     - scene.bedroom_night_lights
