@@ -1,3 +1,4 @@
 secrets.yaml
 deploy.retry
 ansible*
+custom_components*
