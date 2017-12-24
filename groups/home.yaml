@@ -6,7 +6,7 @@ default_view:
     - group.glance
     - group.scenes
     - device_tracker.speiphone
-    - device_tracker.courtney_courtneyiphone
+    - device_tracker.courtneys_iphone
     - sensor.work_commute_from_home
     - sensor.pws_weather
     - binary_sensor.front_porch_motion_sensor

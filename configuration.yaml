@@ -62,18 +62,14 @@ hue:
 
 # Push notifications
 notify:
-  - name: pushover
-    platform: pushover
-    api_key: !secret pushover_api_key
-    user_key: !secret pushover_user_key
   - name: downstairs_tv
     platform: webostv
     host: !secret living_room_tv_host
   - name: phones
     platform: group
     services:
-      - service: pushover
       - service: ios_speiphone
+      - service: ios_courtneys_iphone
 
 
 # z-wave
