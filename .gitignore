@@ -1,4 +1,5 @@
 secrets.yaml
+known_devices.yaml
 deploy.retry
 ansible*
 custom_components*
