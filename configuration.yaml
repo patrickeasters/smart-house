@@ -24,11 +24,6 @@ http:
   ip_ban_enabled: false
   login_attempts_threshold: 5
 
-device_tracker:
-  - platform: owntracks
-    devices:
-      courtney_iphone: /owntracks/courtney/courtney-iphone
-
 # MQTT Broker
 mqtt:
   broker: localhost
