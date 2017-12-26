@@ -12,7 +12,7 @@ exterior_doors:
   name: Exterior Doors
   control: hidden
   icon: mdi:home-variant
-  entities:
+  entities: &outside_doors_entities
     - binary_sensor.front_door
     - binary_sensor.garage_entry
     - binary_sensor.back_door
@@ -22,7 +22,7 @@ exterior_doors:
 exterior_lights:
   name: Outside Lights
   icon: mdi:lightbulb
-  entities:
+  entities: &exterior_lights_entities
     - switch.front_porch_light_switch
     - switch.deck_lights_switch
     - switch.front_outside_lights_switch_2
@@ -32,7 +32,7 @@ exterior_lights:
 crawl_space:
   name: Crawl Space
   control: hidden
-  entities:
+  entities: &crawl_space_entities
     - binary_sensor.crawl_space_motion
     - sensor.crawl_space_multi_luminance
     - sensor.crawl_space_multi_relative_humidity

@@ -16,14 +16,14 @@ view_upstairs:
 nursery:
   name: Nursery
   icon: mdi:baby-buggy
-  entities:
+  entities: &nursery_entities
     - light.nursery_lamp
     - light.crib_lights
 
 master_bedroom:
   name: Master Bedroom
   icon: mdi:hotel
-  entities:
+  entities: &master_bedroom_entities
     - fan.master_bedroom_fan_level
     - light.nightstand__courtney
     - light.nightstand__patrick
@@ -31,6 +31,6 @@ master_bedroom:
 master_bathroom:
   name: Master Bathroom
   icon: mdi:water
-  entities:
+  entities: &master_bathroom_entities
     - light.master_bathroom_vanity_lights_level
     - light.osram_lightify_rt_rgbw_00084cf7_3
