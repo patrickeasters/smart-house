@@ -27,7 +27,7 @@ living_room:
 
 kitchen:
   name: Kitchen
-  icon: mdi:food-variant
+  icon: mdi:fridge-filled
   entities: &kitchen_entities
     - light.kitchen_overhead_light_level
     - light.kitchen_table_light_level
