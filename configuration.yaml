@@ -45,9 +45,8 @@ input_boolean: !include_dir_named input_bool
 automation: !include_dir_list automation
 scene: !include_dir_list scenes
 
-# Alexa
-alexa:
-  intents: !include_dir_named alexa_intents
+# Speech Intents
+intent_script: !include_dir_named alexa_intents
 
 #IFTTT
 ifttt:
