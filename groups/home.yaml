@@ -32,6 +32,7 @@ scenes:
   control: hidden
   entities:
     - scene.downstairs_night_lights
+    - scene.downstairs_play_lights
     - scene.nursery_changing_lights
     - scene.nursery_night_lights
     - scene.bedroom_night_lights

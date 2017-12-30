@@ -1,4 +1,5 @@
-name: Downstairs Night Lights
+# Lights for the kiddo playing on the living room floor
+name: Downstairs Play Lights
 entities:
   light.downstairs_lamp:
     state: on
@@ -6,13 +7,13 @@ entities:
     transition: 2
   light.osram_lightify_rt_rgbw_00083dd9_3:
     state: on
-    rgb_color: [68, 9, 44]
-    brightness: 5
+    kelvin: 4000
+    brightness: 150
     transition: 2
   light.osram_lightify_rt_rgbw_0008419b_3:
     state: on
-    rgb_color: [22, 1, 44]
-    brightness: 1
+    kelvin: 4000
+    brightness: 150
     transition: 2
   light.downstairs_fan_light_level:
     state: off
