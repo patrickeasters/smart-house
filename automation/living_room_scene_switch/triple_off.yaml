@@ -9,7 +9,7 @@ trigger:
 action:
   - service: homeassistant.turn_off
     data:
-      entity_id: group.view_downstairs
-  - service: homeassistant.turn_off
-    data:
-      entity_id: group.exterior_lights
+      entity_id:
+        - group.view_downstairs
+        - group.exterior_lights
+        - group.kitchen
