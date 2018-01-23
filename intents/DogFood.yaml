@@ -1,5 +1,4 @@
 speech:
-  type: plaintext
   text: >
     {%- if is_state('input_boolean.dog_needs_food', 'on') -%}
       {% set responses = [

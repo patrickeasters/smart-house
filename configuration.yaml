@@ -46,11 +46,16 @@ automation: !include_dir_list automation
 scene: !include_dir_list scenes
 
 # Speech Intents
-intent_script: !include_dir_named alexa_intents
+alexa:
+intent_script: !include_dir_named intents
 
 #IFTTT
 ifttt:
   key: !secret ifttt_key
+
+# ecobee
+ecobee:
+  api_key: !secret ecobee_api_key
 
 # Hue
 hue:
