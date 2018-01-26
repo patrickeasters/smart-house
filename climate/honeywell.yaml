@@ -1,6 +1,0 @@
-# Honeywell TotalConnect
-platform: honeywell
-username: !secret honeywell_user
-password: !secret honeywell_pass
-region: us
-scan_interval: 600
