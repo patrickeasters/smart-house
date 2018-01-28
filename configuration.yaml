@@ -65,14 +65,18 @@ hue:
 
 # Push notifications
 notify:
+  - name: html5
+    platform: html5
+    gcm_api_key: !secret gcm_server_key
+    gcm_sender_id: !secret gcm_sender_id
   - name: downstairs_tv
     platform: webostv
     host: !secret living_room_tv_host
   - name: phones
     platform: group
     services:
-      - service: ios_speiphone
       - service: ios_courtneys_iphone
+      - service: html5_patrick_phone
 
 
 # z-wave
