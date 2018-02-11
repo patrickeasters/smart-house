@@ -52,6 +52,10 @@ intent_script: !include_dir_named intents
 ifttt:
   key: !secret ifttt_key
 
+# Location data
+device_tracker:
+  - platform: gpslogger
+
 # ecobee
 ecobee:
   api_key: !secret ecobee_api_key

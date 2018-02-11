@@ -5,7 +5,7 @@ default_view:
   entities:
     - group.glance
     - group.scenes
-    - device_tracker.speiphone
+    - device_tracker.patrickphone
     - device_tracker.courtneys_iphone
     - sensor.work_commute_from_home
     - sensor.pws_weather
