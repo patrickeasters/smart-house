@@ -1,6 +1,4 @@
 # Binary Sensors
-binary_sensor.dog_food_bin_sensor:
-  icon: mdi:bone
 binary_sensor.stairs_motion_sensor:
   device_class: motion
 binary_sensor.front_porch_motion_sensor:
@@ -13,17 +11,12 @@ binary_sensor.master_bathroom_door:
   device_class: opening
 binary_sensor.master_bathroom_door_sensor:
   hidden: true
-binary_sensor.garage_door:
-  device_class: opening
 binary_sensor.crawl_space_multi_sensor:
   hidden: true
 binary_sensor.nursery_multi_sensor:
   hidden: true
 binary_sensor.centralite_3320l_0bbe6586_1:
   friendly_name: "Crawl Space Door"
-# covers
-cover.garage_door:
-  device_class: garage
 # Sensors
 sensor.crawl_space_multi_relative_humidity:
   icon: mdi:cup-water
@@ -42,8 +35,6 @@ sensor.work_commute_from_home:
 sensor.dehumidifier_plug_power:
   friendly_name: "Dehumidifier Power Consumption"
   icon: mdi:power-plug
-sensor.paisley_food:
-  icon: mdi:silverware
 # Automation Booleans
 input_boolean.lamp_auto_on:
   hidden: true

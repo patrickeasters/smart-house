@@ -42,6 +42,20 @@ automation:
 input_boolean:
   dog_needs_food:
     name: Paisley Needs Food
+
+# use a template sensor to diplay in the UI
+sensor:
+  - platform: template
+    sensors:
+      paisley_food:
+        value_template: '{% if is_state("input_boolean.dog_needs_food", "on") %}yes{% else %}no{% endif %}'
+        friendly_name: 'Paisley Needs Food?'
+
+# customize
+customize:
+  binary_sensor.dog_food_bin_sensor:
+    icon: mdi:bone
+  sensor.paisley_food:
     icon: mdi:silverware
 
 # Alexa intent

@@ -6,6 +6,7 @@ cover:
         device_key: !secret garage_devicekey
         name: Garage Door
 
+# for showing on a state card
 binary_sensor:
   - platform: template
     sensors:
@@ -28,3 +29,9 @@ automation:
       - service: notify.phones
         data:
           message: "Don't forget to close the garage door!"
+
+customize:
+  cover.garage_door:
+    device_class: garage
+  binary_sensor.garage_door:
+    device_class: opening
