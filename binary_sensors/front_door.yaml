@@ -1,6 +1,0 @@
-platform: mqtt
-state_topic: "pat/alarm/Front Door"
-name: "Front Door"
-payload_on: "open"
-payload_off: "closed"
-device_class: opening

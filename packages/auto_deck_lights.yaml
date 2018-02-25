@@ -1,0 +1,45 @@
+automation:
+  - alias: "Deck Lights Auto On"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.back_door
+        to: "on"
+    condition:
+      condition: and
+      conditions:
+        - condition: sun
+          after: sunset
+        - condition: state
+          entity_id: switch.deck_lights_switch
+          state: "off"
+    action:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: switch.deck_lights_switch
+      - service: homeassistant.turn_on
+        data:
+          entity_id: input_boolean.deck_auto_on
+
+  - alias: "Deck Lights Auto Off"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.back_door
+        to: "off"
+        for:
+          seconds: 30
+    condition:
+      condition: state
+      entity_id: input_boolean.deck_auto_on
+      state: "on"
+    action:
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.deck_lights_switch
+      - service: homeassistant.turn_off
+        data:
+          entity_id: input_boolean.deck_auto_on
+
+# keep track of state
+input_boolean:
+  deck_auto_on:
+    name: Deck Lights Auto On

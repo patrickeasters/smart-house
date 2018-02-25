@@ -1,0 +1,19 @@
+binary_sensor:
+  - platform: mqtt
+    state_topic: "pat/alarm/Back Door"
+    name: "Back Door"
+    payload_on: "open"
+    payload_off: "closed"
+    device_class: opening
+  - platform: mqtt
+    state_topic: "pat/alarm/Front Door"
+    name: "Front Door"
+    payload_on: "open"
+    payload_off: "closed"
+    device_class: opening
+  - platform: mqtt
+    state_topic: "pat/alarm/Garage Entry"
+    name: "Garage Entry"
+    payload_on: "open"
+    payload_off: "closed"
+    device_class: opening

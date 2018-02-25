@@ -1,0 +1,66 @@
+automation:
+  # "arm" the alarm well before feeding time
+  - alias: "Dog Food Activate"
+    trigger:
+      - platform: time
+        at: '01:00:00'
+      - platform: time
+        at: '16:00:00'
+    action:
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.dog_needs_food
+
+  # blow up our pohones if we forget to feed her
+  - alias: "Dog Food Alert"
+    trigger:
+      - platform: time
+        at: '07:30:00'
+      - platform: time
+        at: '18:00:00'
+    condition:
+      condition: state
+      entity_id: input_boolean.dog_needs_food
+      state: "on"
+    action:
+      - service: notify.phones
+        data:
+          message: "Don't forget to feed Paisley!"
+
+  # dog has been fed
+  - alias: "Dog Food Reset"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.dog_food_bin_sensor
+        to: "on"
+    action:
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.dog_needs_food
+
+# track state
+input_boolean:
+  dog_needs_food:
+    name: Paisley Needs Food
+    icon: mdi:silverware
+
+# Alexa intent
+intent_script:
+  DogFood:
+    speech:
+      text: >
+        {%- if is_state('input_boolean.dog_needs_food', 'on') -%}
+          {% set responses = [
+          "She's probably hungry",
+          "She could use some food",
+          "She would appreciate some food"
+          ] %}
+        {%- else -%}
+          {% set responses = [
+          "She's already been fed",
+          "Don't let her fool you, she already ate",
+          "As much as she'd love it, she doesn't need any food"
+          ] %}
+        {%- endif -%}
+        {% set rindex =  (range(0, (responses | length - 1) )|random) -%}
+        {{responses[rindex]}}

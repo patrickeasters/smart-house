@@ -1,17 +1,13 @@
 homeassistant:
-  # Name of the location where Home Assistant is running
   name: Home
-  # Location required to calculate the time the sun rises and sets
   latitude: !secret home_lat
   longitude: !secret home_long
-  # Impacts weather/sunrise data (altitude above sea level in meters)
   elevation: 152
-  # metric for Metric, imperial for Imperial
   unit_system: imperial
-  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
   time_zone: America/New_York
-  # Other customizations and stuff
   customize: !include customize.yaml
+
+  packages: !include_dir_named packages
 
 frontend:
 
@@ -34,19 +30,16 @@ mqtt:
 group: !include_dir_merge_named groups
 switch: !include_dir_list switches
 camera: !include_dir_list cameras
-cover: !include_dir_list covers
 binary_sensor: !include_dir_list binary_sensors
 sensor: !include_dir_list sensors
 light: !include_dir_list lights
 media_player: !include_dir_list media
-input_boolean: !include_dir_named input_bool
-#input_select: !include_dir_named input_select
 automation: !include_dir_list automation
 scene: !include_dir_list scenes
 
 # Speech Intents
 alexa:
-intent_script: !include_dir_named intents
+#intent_script: !include_dir_named intents
 
 #IFTTT
 ifttt:

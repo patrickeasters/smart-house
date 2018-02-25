@@ -1,0 +1,45 @@
+automation:
+  - alias: "Porch Light Auto On"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.front_door
+        to: "on"
+    condition:
+      condition: and
+      conditions:
+        - condition: sun
+          after: sunset
+        - condition: state
+          entity_id: switch.front_porch_light_switch
+          state: "off"
+    action:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: switch.front_porch_light_switch
+      - service: homeassistant.turn_on
+        data:
+          entity_id: input_boolean.porch_auto_on
+
+  - alias: "Porch Light Auto Off"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.front_door
+        to: "off"
+        for:
+          minutes: 3
+    condition:
+      condition: state
+      entity_id: input_boolean.porch_auto_on
+      state: "on"
+    action:
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.front_porch_light_switch
+      - service: homeassistant.turn_off
+        data:
+          entity_id: input_boolean.porch_auto_on
+
+# keep track of state
+input_boolean:
+  porch_auto_on:
+    name: Downstairs Lamp Auto On

@@ -1,0 +1,44 @@
+automation:
+  - alias: "Lamp Auto On"
+    trigger:
+      - platform: state
+        entity_id: binary_sensor.stairs_motion_sensor
+        to: "on"
+    condition:
+      condition: and
+      conditions:
+        - condition: sun
+          before: sunrise
+        - condition: time
+          after: '04:30:00'
+    action:
+      - service: light.turn_on
+        data:
+          entity_id: light.downstairs_lamp
+          brightness: 200
+          transition: 10
+      - service: input_boolean.turn_on
+        data:
+          entity_id: input_boolean.lamp_auto_on
+
+  - alias: "Lamp Auto Off"
+    trigger:
+      - platform: sun
+        event: sunrise
+        offset: '00:30:00'
+    condition:
+      condition: state
+      entity_id: input_boolean.lamp_auto_on
+      state: "on"
+    action:
+      - service: light.turn_off
+        data:
+          entity_id: light.downstairs_lamp
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.lamp_auto_on
+
+# keep track of state
+input_boolean:
+  lamp_auto_on:
+    name: Porch Light Auto On

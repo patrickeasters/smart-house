@@ -1,0 +1,30 @@
+cover:
+  - platform: opengarage
+    covers:
+      garage:
+        host: !secret garage_hostname
+        device_key: !secret garage_devicekey
+        name: Garage Door
+
+binary_sensor:
+  - platform: template
+    sensors:
+      garage_door:
+        friendly_name: Garage Door
+        value_template: '{{ states.cover.garage_door.attributes["door_state"] == "open" }}'
+
+automation:
+  - alias: "Garage Door Open"
+    trigger:
+      - platform: time
+        at: '20:30:00'
+    condition:
+      condition: state
+      entity_id: binary_sensor.garage_door
+      state: "on"
+      for:
+        minutes: 5
+    action:
+      - service: notify.phones
+        data:
+          message: "Don't forget to close the garage door!"
