@@ -1,0 +1,57 @@
+sensor:
+  - platform: wunderground
+    api_key: !secret wunderground_api_key
+    pws_id: KNCAPEX32
+    monitored_conditions:
+      - feelslike_string
+      - precip_today_in
+      - precip_today_string
+      - precip_1d
+      - weather_1h
+      - weather_2h
+      - weather_3h
+      - weather_4h
+      - weather_5h
+      - weather_6h
+      - weather_7h
+      - weather_8h
+      - weather_9h
+      - weather_10h
+      - weather_11h
+      - weather_12h
+      - relative_humidity
+      - temperature_string
+      - temp_f
+      - UV
+      - weather
+      - wind_dir
+      - wind_mph
+      - wind_string
+  # max chance of precip in next 6 hours
+  - platform: template
+    sensors:
+      precip_next_6h:
+        friendly_name: Chance of Precipitation next 6 hours
+        value_template: >-
+          {{ [ (states.sensor.pws_weather_1h.attributes.precip_prop|int),
+               (states.sensor.pws_weather_2h.attributes.precip_prop|int),
+               (states.sensor.pws_weather_3h.attributes.precip_prop|int),
+               (states.sensor.pws_weather_4h.attributes.precip_prop|int),
+               (states.sensor.pws_weather_5h.attributes.precip_prop|int),
+               (states.sensor.pws_weather_6h.attributes.precip_prop|int), ] |max }}
+
+automation:
+  # update Leeo based on chance of rain in next 6 hours
+  - alias: "Update Leeo with weather"
+    trigger:
+      - platform: state
+        entity_id: sensor.precip_next_6h
+    action:
+      - service: ifttt.trigger
+        data_template:
+          event: leeo_color
+          value1: >-
+            {% set scale = states.sensor.precip_next_6h.state|int / 100 %}
+            {{ "%02x%02x%02x" |format( (255-255*scale) |int,
+                                       (251-115*scale) |int,
+                                       (122+133*scale) |int ) }}
