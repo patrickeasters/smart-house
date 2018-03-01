@@ -51,7 +51,12 @@ automation:
         data_template:
           event: leeo_color
           value1: >-
+            {% set color1 = 'fffb7a' %}
+            {% set color2 = '0088ff' %}
+            {% set diff_r = color2[0:2]|int(base=16) - color1[0:2]|int(base=16) %}
+            {% set diff_g = color2[2:4]|int(base=16) - color1[2:4]|int(base=16) %}
+            {% set diff_b = color2[4:6]|int(base=16) - color1[4:6]|int(base=16) %}
             {% set scale = states.sensor.precip_next_6h.state|int / 100 %}
-            {{ "%02x%02x%02x" |format( (255-255*scale) |int,
-                                       (251-115*scale) |int,
-                                       (122+133*scale) |int ) }}
+            {{ "%02x%02x%02x"  |format( ( color1[0:2]|int(base=16) + diff_r * scale ) |int,
+                                        ( color1[2:4]|int(base=16) + diff_g * scale ) |int,
+                                        ( color1[4:6]|int(base=16) + diff_b * scale ) |int ) }}
