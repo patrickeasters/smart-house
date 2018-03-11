@@ -30,8 +30,9 @@ automation:
         data:
           message: "Don't forget to close the garage door!"
 
-customize:
-  cover.garage_door:
-    device_class: garage
-  binary_sensor.garage_door:
-    device_class: opening
+homeassistant:
+  customize:
+    cover.garage_door:
+      device_class: garage
+    binary_sensor.garage_door:
+      device_class: opening

@@ -52,11 +52,12 @@ sensor:
         friendly_name: 'Paisley Needs Food?'
 
 # customize
-customize:
-  binary_sensor.dog_food_bin_sensor:
-    icon: mdi:bone
-  sensor.paisley_food:
-    icon: mdi:silverware
+homeassistant:
+  customize:
+    binary_sensor.dog_food_bin_sensor:
+      icon: mdi:bone
+    sensor.paisley_food:
+      icon: mdi:silverware
 
 # Alexa intent
 intent_script:
