@@ -22,14 +22,13 @@ http:
 
 # MQTT Broker
 mqtt:
-  broker: localhost
+  broker: !secret mqtt_broker
   username: !secret mqtt_user
   password: !secret mqtt_pass
 
 # include a bunch of stuff to make this file cleaner
 group: !include_dir_merge_named groups
 switch: !include_dir_list switches
-camera: !include_dir_list cameras
 binary_sensor: !include_dir_list binary_sensors
 sensor: !include_dir_list sensors
 light: !include_dir_list lights
@@ -84,7 +83,7 @@ zwave:
 # zigbee home automation
 zha:
   usb_path: /dev/zigbee
-  database_path: /home/hass/.homeassistant/zigbee.db
+  database_path: /config/zigbee.db
 
 # zones
 zone:
