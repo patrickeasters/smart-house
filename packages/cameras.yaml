@@ -1,0 +1,6 @@
+camera:
+  - platform: synology
+    url: !secret synology_host
+    username: !secret synology_user
+    password: !secret synology_pass
+    verify_ssl: false
