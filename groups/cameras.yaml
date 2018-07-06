@@ -1,0 +1,6 @@
+view_cameras:
+  name: Cameras
+  view: yes
+  icon: mdi:video
+  entities:
+    - camera.front_porch

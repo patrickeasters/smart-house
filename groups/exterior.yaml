@@ -6,7 +6,6 @@ view_exterior:
     - group.exterior_doors
     - group.exterior_lights
     - group.crawl_space
-    - camera.front_porch
 
 exterior_doors:
   name: Exterior Doors

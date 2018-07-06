@@ -47,6 +47,8 @@ group.view_upstairs:
   order: 2
 group.view_exterior:
   order: 3
+group.view_cameras:
+  order: 4
 # Fans
 fan.downstairs_fan_level:
   friendly_name: "Downstairs Fan"
