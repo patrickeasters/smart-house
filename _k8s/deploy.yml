@@ -1,0 +1,73 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hass
+  labels:
+    app: hass
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: hass
+  template:
+    metadata:
+      labels:
+        app: hass
+    spec:
+      containers:
+      - name: hass
+        image: homeassistant/home-assistant
+        securityContext:
+          privileged: true
+        ports:
+        - containerPort: 8123
+        volumeMounts:
+        - name: config
+          mountPath: /config
+        - name: zigbee
+          mountPath: /dev/zigbee
+        - name: zwave
+          mountPath: /dev/zwave
+      volumes:
+      - name: config
+        hostPath:
+          path: /opt/hass
+      - name: zigbee
+        hostPath:
+          path: /dev/zigbee
+      - name: zwave
+        hostPath:
+          path: /dev/zwave
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mariadb
+  labels:
+    app: mariadb
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+      - name: mariadb
+        image: mariadb:10.3
+        ports:
+        - containerPort: 3306
+        volumeMounts:
+        - name: data
+          mountPath: /var/lib/mysql
+      volumes:
+      - name: data
+        hostPath:
+          path: /opt/mariadb

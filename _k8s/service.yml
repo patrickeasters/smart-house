@@ -1,0 +1,21 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: hass
+spec:
+  selector:
+    app: hass
+  ports:
+  - protocol: TCP
+    port: 8123
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: mariadb
+spec:
+  selector:
+    app: mariadb
+  ports:
+  - protocol: TCP
+    port: 3306

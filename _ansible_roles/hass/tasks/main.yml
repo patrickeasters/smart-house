@@ -1,0 +1,34 @@
+- name: sync top-level hass config files
+  synchronize:
+    src: ../../../
+    dest: /opt/hass/
+    archive: no
+    rsync_opts:
+      - "--include=*.yaml"
+      - "--exclude=*"
+      - "-d"
+  tags: [ hass, config ]
+
+- name: sync hass config subdirs
+  synchronize:
+    src: ../../../{{ item }}
+    dest: /opt/hass/
+    archive: no
+    recursive: yes
+    delete: yes
+  with_items:
+    - automation
+    - binary_sensors
+    - custom_components
+    - covers
+    - groups
+    - input_bool
+    - input_select
+    - intents
+    - lights
+    - media
+    - packages
+    - scenes
+    - sensors
+    - switches
+  tags: [ hass, config ]
