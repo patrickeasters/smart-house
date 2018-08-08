@@ -1,7 +1,5 @@
-media_player:
-  - platform: cast
-    host: !secret living_room_cast
-  - platform: cast
-    host: !secret master_bath_cast
-  - platform: cast
-    host: !secret back_porch_cast
+cast:
+  media_player:
+  - host: !secret living_room_cast
+  - host: !secret master_bath_cast
+  - host: !secret back_porch_cast
