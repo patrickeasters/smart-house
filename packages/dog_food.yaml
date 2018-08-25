@@ -19,9 +19,12 @@ automation:
       - platform: time
         at: '18:00:00'
     condition:
-      condition: state
-      entity_id: input_boolean.dog_needs_food
-      state: "on"
+      - condition: state
+        entity_id: input_boolean.dog_needs_food
+        state: "on"
+      - condition: state
+        entity_id: input_boolean.dog_away_mode
+        state: "off"
     action:
       - service: notify.phones
         data:
@@ -42,6 +45,10 @@ automation:
 input_boolean:
   dog_needs_food:
     name: Paisley Needs Food
+  dog_away_mode:
+    name: Paisley Is Away
+    icon: mdi:beach
+
 
 # use a template sensor to diplay in the UI
 sensor:
