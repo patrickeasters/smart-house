@@ -17,6 +17,7 @@ http:
   base_url: !secret hass_base_url
   api_password: !secret hass_password
   use_x_forwarded_for: true
+  trusted_proxies: !secret http_trusted_networks
   ip_ban_enabled: false
   login_attempts_threshold: 5
 
