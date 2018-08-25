@@ -20,9 +20,7 @@
     - automation
     - binary_sensors
     - custom_components
-    - covers
     - groups
-    - input_bool
     - input_select
     - intents
     - lights
