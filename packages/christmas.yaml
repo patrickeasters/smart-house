@@ -1,0 +1,23 @@
+automation:
+  - alias: "Christmas Lights Off"
+    trigger:
+      - platform: time
+        at: '22:00:00'
+    action:
+      - service: homeassistant.turn_off
+        data:
+          entity_id: switch.front_christmas_lights_switch
+
+  - alias: "Christmas Lights On"
+    trigger:
+      - platform: sun
+        event: sunset
+    action:
+      - service: homeassistant.turn_on
+        data:
+          entity_id: switch.front_christmas_lights_switch
+
+# keep track of state
+input_boolean:
+  porch_auto_on:
+    name: Downstairs Lamp Auto On
