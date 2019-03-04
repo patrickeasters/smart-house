@@ -1,11 +1,11 @@
 name: Bedroom Night Lights
 entities:
-  light.nightstand__courtney:
+  light.nightstand_courtney:
     state: on
     color_temp: 500
     brightness: 1
     transition: 2
-  light.nightstand__patrick:
+  light.nightstand_patrick:
     state: on
     color_temp: 500
     brightness: 1
