@@ -9,9 +9,10 @@ homeassistant:
   packages: !include_dir_named packages
   auth_providers:
     - type: homeassistant
-    - type: legacy_api_password
 
 frontend:
+
+api:
 
 config:
 
@@ -19,7 +20,6 @@ system_health:
 
 http:
   base_url: !secret hass_base_url
-  api_password: !secret hass_password
   use_x_forwarded_for: true
   trusted_proxies: !secret http_trusted_networks
   ip_ban_enabled: false
@@ -43,6 +43,7 @@ scene: !include_dir_list scenes
 
 # Speech Intents
 alexa:
+  smart_home:
 #intent_script: !include_dir_named intents
 
 #IFTTT
