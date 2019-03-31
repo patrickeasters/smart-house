@@ -10,12 +10,13 @@ automation:
         - condition: sun
           after: sunset
         - condition: state
-          entity_id: switch.deck_lights_switch
+          entity_id: light.white_bulb
           state: "off"
     action:
       - service: homeassistant.turn_on
         data:
-          entity_id: switch.deck_lights_switch
+          entity_id: light.white_bulb
+          brightness: 255
       - service: homeassistant.turn_on
         data:
           entity_id: input_boolean.deck_auto_on
@@ -34,7 +35,7 @@ automation:
     action:
       - service: homeassistant.turn_off
         data:
-          entity_id: switch.deck_lights_switch
+          entity_id: light.white_bulb
       - service: homeassistant.turn_off
         data:
           entity_id: input_boolean.deck_auto_on
