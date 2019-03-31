@@ -23,7 +23,7 @@ automation:
   - alias: "Door Open"
     trigger:
       - platform: state
-        entity_id: binary_sensor.garage_entry, binary_sensor.front_door, binary_sensor.back_door
+        entity_id: binary_sensor.garage_entry, binary_sensor.front_door
         to: "on"
         for:
           minutes: 5
