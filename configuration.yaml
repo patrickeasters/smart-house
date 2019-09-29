@@ -50,10 +50,6 @@ alexa:
 ifttt:
   key: !secret ifttt_key
 
-# Location data
-device_tracker:
-  - platform: gpslogger
-
 # ecobee
 ecobee:
   api_key: !secret ecobee_api_key
@@ -69,8 +65,9 @@ hue:
 notify:
   - name: html5
     platform: html5
-    gcm_api_key: !secret gcm_server_key
-    gcm_sender_id: !secret gcm_sender_id
+    vapid_pub_key: !secret firebase_msg_pubkey
+    vapid_prv_key: !secret firebase_msg_privkey
+    vapid_email: !secret firebase_msg_email
   - name: downstairs_tv
     platform: webostv
     host: !secret living_room_tv_host

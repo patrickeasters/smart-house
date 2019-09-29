@@ -1,0 +1,39 @@
+# time selector
+input_datetime:
+  nora_wake:
+    name: Time to Wake
+    has_time: true
+input_boolean:
+  nora_wake_alarm:
+    name: Alarm On
+    icon: mdi:alarm
+scene:
+  - name: Nora Green Light
+    entities:
+      light.nursery_lamp:
+        state: on
+        rgb_color: [0,255,0]
+        brightness_pct: 50
+automation:
+  - id: nora_wake
+    alias: "Alarm Trigger"
+    trigger:
+      - platform: time_pattern
+        minutes: '/1'
+    condition:
+      - condition: state
+        entity_id: input_boolean.nora_wake_alarm
+        state: 'on'
+      - condition: template
+        value_template: "{{ states('sensor.time') == (state_attr('input_datetime.nora_wake' , 'timestamp')|timestamp_custom('%H:%M', false)) }}"
+    action:
+      - service: scene.turn_on
+        data:
+          entity_id: scene.nora_green_light
+      - service: input_boolean.turn_off
+        data:
+          entity_id: input_boolean.nora_wake_alarm
+homeassistant:
+  customize:
+    automation.nora_wake:
+      icon: mdi:alarm
