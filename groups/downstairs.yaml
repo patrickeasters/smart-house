@@ -1,7 +1,7 @@
 view_downstairs:
   name: Downstairs
   view: yes
-  icon: mdi:numeric-1-box
+  icon: mdi:home-floor-1
   entities:
     - climate.downstairs
     - group.living_room

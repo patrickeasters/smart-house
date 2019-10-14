@@ -1,7 +1,7 @@
 view_upstairs:
   name: Upstairs
   view: yes
-  icon: mdi:numeric-2-box
+  icon: mdi:home-floor-2
   entities:
     - group.master_bedroom
     - group.master_bathroom

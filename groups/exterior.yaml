@@ -5,6 +5,7 @@ view_exterior:
   entities:
     - group.exterior_doors
     - group.exterior_lights
+    - group.back_porch
     - group.crawl_space
 
 exterior_doors:
@@ -27,6 +28,14 @@ exterior_lights:
     - switch.front_outside_lights_switch_2
     - switch.front_outside_lights_switch_3
     - switch.front_christmas_lights_switch
+
+back_porch:
+  name: Back Porch
+  icon: mdi:grill
+  entities: &back_porch_entities
+    - light.back_porch_fan_light
+    - fan.back_porch_fan
+    - light.white_bulb
 
 crawl_space:
   name: Crawl Space
