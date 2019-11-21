@@ -25,7 +25,7 @@ automation:
         entity_id: input_boolean.nora_wake_alarm
         state: 'on'
       - condition: template
-        value_template: "{{ states('sensor.time') == (state_attr('input_datetime.nora_wake' , 'timestamp')|timestamp_custom('%H:%M', false)) }}"
+        value_template: "{{ ( trigger.now|timestamp_custom('%H:%M', false) ) == ( state_attr('input_datetime.nora_wake' , 'timestamp')|timestamp_custom('%H:%M', false) ) }}"
     action:
       - service: scene.turn_on
         data:
