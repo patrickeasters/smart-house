@@ -16,7 +16,10 @@ automation:
         data:
           entity_id: light.downstairs_lamp
           brightness: 200
-          transition: 10
+          transition: 5
+      - service: switch.turn_on
+        data:
+          entity_id: switch.giraffe_lights
       - service: input_boolean.turn_on
         data:
           entity_id: input_boolean.lamp_auto_on
