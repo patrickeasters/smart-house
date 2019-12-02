@@ -10,6 +10,6 @@ action:
   - service: homeassistant.turn_off
     data:
       entity_id:
-        - group.view_downstairs
+        - group.living_room
         - group.exterior_lights
         - group.kitchen
