@@ -18,6 +18,10 @@ config:
 
 system_health:
 
+mobile_app:
+
+person:
+
 http:
   base_url: !secret hass_base_url
   use_x_forwarded_for: true
