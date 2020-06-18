@@ -24,7 +24,6 @@
     - input_select
     - intents
     - lights
-    - media
     - packages
     - scenes
     - sensors

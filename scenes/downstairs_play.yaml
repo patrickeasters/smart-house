@@ -5,12 +5,12 @@ entities:
     state: on
     brightness: 160
     transition: 2
-  light.osram_lightify_rt_rgbw_00083dd9_3:
+  light.living_room_left:
     state: on
     kelvin: 4000
     brightness: 150
     transition: 2
-  light.osram_lightify_rt_rgbw_0008419b_3:
+  light.living_room_rightxs:
     state: on
     kelvin: 4000
     brightness: 150

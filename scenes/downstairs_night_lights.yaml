@@ -4,12 +4,12 @@ entities:
     state: on
     brightness: 160
     transition: 2
-  light.osram_lightify_rt_rgbw_00083dd9_3:
+  light.living_room_left:
     state: on
     rgb_color: [68, 9, 44]
     brightness: 5
     transition: 2
-  light.osram_lightify_rt_rgbw_0008419b_3:
+  light.living_room_right:
     state: on
     rgb_color: [22, 1, 44]
     brightness: 1

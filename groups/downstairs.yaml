@@ -1,6 +1,5 @@
 view_downstairs:
   name: Downstairs
-  view: yes
   icon: mdi:home-floor-1
   entities:
     - climate.downstairs

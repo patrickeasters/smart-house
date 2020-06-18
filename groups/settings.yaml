@@ -1,6 +1,5 @@
 view_settings:
   name: Settings
-  view: yes
   icon: mdi:settings
   entities:
     - input_boolean.dog_away_mode

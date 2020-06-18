@@ -1,6 +1,5 @@
 view_exterior:
   name: Outside
-  view: yes
   icon: mdi:tree
   entities:
     - group.exterior_doors

@@ -57,12 +57,6 @@ fan.downstairs_fan_level:
 fan.master_bedroom_fan_level:
   friendly_name: "Master Bedroom Fan"
 # Lights
-light.osram_lightify_rt_rgbw_0008419b_3:
-  friendly_name: "Living Room Right"
-light.osram_lightify_rt_rgbw_00083dd9_3:
-  friendly_name: "Living Room Left"
-light.osram_lightify_rt_rgbw_00084cf7_3:
-  friendly_name: "Master Bath Shower"
 light.downstairs_fan_light_level:
   friendly_name: "Living Room Fan Light"
 light.master_bathroom_vanity_lights_level:
