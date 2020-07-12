@@ -23,7 +23,6 @@ nursery:
 nora_wake:
   name: Nora's OK to Wake
   icon: mdi:baby-face-outline
-  control: hidden
   entities:
     - input_datetime.nora_wake
     - input_boolean.nora_wake_alarm

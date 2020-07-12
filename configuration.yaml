@@ -42,6 +42,16 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
 
+influxdb:
+  host: influx
+  port: 8086
+  database: db0
+  username: hass
+  password: !secret influx_password
+  include:
+    domains:
+      - climate
+
 # include a bunch of stuff to make this file cleaner
 group: !include_dir_merge_named groups
 switch: !include_dir_list switches

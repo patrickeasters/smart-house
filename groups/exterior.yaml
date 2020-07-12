@@ -9,7 +9,6 @@ view_exterior:
 
 exterior_doors:
   name: Exterior Doors
-  control: hidden
   icon: mdi:home-variant
   entities: &outside_doors_entities
     - binary_sensor.front_door
@@ -38,7 +37,6 @@ back_porch:
 
 crawl_space:
   name: Crawl Space
-  control: hidden
   entities: &crawl_space_entities
     - binary_sensor.crawl_space_motion
     - sensor.crawl_space_multi_luminance

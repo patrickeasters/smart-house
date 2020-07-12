@@ -1,5 +1,0 @@
-view_cameras:
-  name: Cameras
-  icon: mdi:video
-  entities:
-    - camera.front_porch

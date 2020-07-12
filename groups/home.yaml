@@ -16,7 +16,6 @@ default_view:
 
 glance:
   name: At a Glance
-  control: hidden
   entities:
     - sensor.paisley_food
     - group.exterior_doors
@@ -28,7 +27,6 @@ glance:
 
 scenes:
   name: Quick Scenes
-  control: hidden
   entities:
     - scene.downstairs_night_lights
     - scene.downstairs_play_lights
